@@ -1,0 +1,5 @@
+*.exe
+*.o
+*.o
+obj/Release/algif5src/example.o
+*.o
