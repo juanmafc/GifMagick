@@ -86,7 +86,7 @@ algif_save_raw_animation (const char *filename, GIF_ANIMATION *gif)
      * 012 palette bits
      */
     for (i = 1, j = 0; i < gif->palette.colors_count; i *= 2, j++);
-        pack_putc ((j ? 128 : 0) + 64 + 32 + 16 + (j ? j - 1 : 0), file);
+    pack_putc ((j ? 128 : 0) + 64 + 32 + 16 + (j ? j - 1 : 0), file);
     pack_putc (gif->background_index, file);
     pack_putc (0, file);        /* No aspect ratio. */
 

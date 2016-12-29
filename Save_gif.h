@@ -48,13 +48,22 @@ void saveGif(const char* filename, ALGIF_ANIMATION* gif) {
     al_fputc(file, (j ? 128 : 0) + 64 + 32 + 16 + (j ? j - 1 : 0));
     al_fputc(file, gif->background_index);
     al_fputc(file, 0);        /* No aspect ratio. */
-    ////////////////////////////////////////
 
 
-    if (j) {
-        //WORKING
+    if (j)
         write_palette (file, &gif->palette, j);
+
+    if (gif->loop != -1){ /* Loop count extension. */
+        al_fputc(file, 0x21); /* Extension Introducer. */
+        al_fputc(file, 0xff); /* Application Extension. */
+        al_fputc(file, 11);    /* Size. */
+        al_fwrite(file, "NETSCAPE2.0", 11);
+        al_fputc(file, 3); /* Size. */
+        al_fputc(file, 1);
+        al_fwrite16le(file, gif->loop);
+        al_fputc(file, 0);
     }
+
 
 
 
