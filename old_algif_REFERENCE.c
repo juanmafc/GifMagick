@@ -139,7 +139,7 @@ algif_save_raw_animation (const char *filename, GIF_ANIMATION *gif)
          */
 
         for (i = 1, j = 0; i < gif->frames[frame].palette.colors_count; i *= 2, j++);
-            pack_putc ((j ? 128 : 0) + (j ? j - 1 : 0), file);
+        pack_putc ((j ? 128 : 0) + (j ? j - 1 : 0), file);
 
         if (j)
             write_palette (file, &gif->frames[frame].palette, j);

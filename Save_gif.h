@@ -65,7 +65,47 @@ void saveGif(const char* filename, ALGIF_ANIMATION* gif) {
     }
 
 
+    //for (frame = 0; frame < gif->frames_count; frame++) {
+    for (frame = 0; frame < 1; frame++) {
+        cout<<"Frame\n";
+        int w = gif->frames[frame].bitmap_8_bit->w;
+        int h = gif->frames[frame].bitmap_8_bit->h;
 
+        al_fputc(file, 0x21); /* Extension Introducer. */
+        al_fputc(file, 0xf9); /* Graphic Control Extension. */
+        al_fputc(file, 4);    /* Size. */
+
+        /* Disposal method, and enable transparency. */
+        i = gif->frames[frame].disposal_method << 2;
+        if (gif->frames[frame].transparent_index != -1)
+            i |= 1;
+        al_fputc(file, i);
+        al_fwrite16le(file, gif->frames[frame].duration); /* In 1/100th seconds. */
+
+        if (gif->frames[frame].transparent_index != -1)
+            al_fputc(file, gif->frames[frame].transparent_index);       /* Transparent color index. */
+        else
+             al_fputc(file, 0);
+        al_fputc(file, 0x00); /* Terminator. */
+
+        al_fputc(file, 0x2c); /* Image Descriptor. */
+        al_fwrite16le(file, gif->frames[frame].xoff);
+        al_fwrite16le(file, gif->frames[frame].yoff);
+        al_fwrite16le(file, w);
+        al_fwrite16le(file, h);
+
+         /* 7: local palette
+         * 6: interlaced
+         * 5: sorted
+         * 012: palette bits
+         */
+
+         for (i = 1, j = 0; i < gif->frames[frame].palette.colors_count; i *= 2, j++);
+         al_fputc(file, (j ? 128 : 0) + (j ? j - 1 : 0));
+
+         if (j)
+            write_palette (file, &gif->frames[frame].palette, j);
+    }
 
 
     al_fclose(file);
