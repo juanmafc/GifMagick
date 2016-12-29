@@ -116,7 +116,7 @@ void game_render(Game *game) {
     al_flip_display();
 }
 
-int main(void) {
+int algifExample(void) {
     al_init();
     al_install_keyboard();
     ALLEGRO_DISPLAY *display = al_create_display(640, 480);
