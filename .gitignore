@@ -3,3 +3,5 @@
 *.o
 obj/Release/algif5src/example.o
 *.o
+*.o
+bin/Release/GIFMaker.exe

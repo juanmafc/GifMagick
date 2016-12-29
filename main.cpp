@@ -34,10 +34,12 @@ int main(int argc, char **argv){
     //AlTutorialImageLoading();
     al_init();
 
+    /*
     ALGIF_ANIMATION* spookyScary = load("disposeGOAL.gif");
-
-
     saveGif("disposeREACHED.gif", spookyScary);
+    */
+    ALGIF_ANIMATION* spookyScary = load("rgbGOAL.gif");
+    saveGif("rgbREACHED.gif", spookyScary);
 }
 
 
