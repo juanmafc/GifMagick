@@ -43,10 +43,9 @@ void saveGif(const char* filename, ALGIF_ANIMATION* gif) {
     * 012 palette bits
     */
     cout<<"Palette colors_count: "<<gif->palette.colors_count<<"\n";
-    //TODO: CHECK THIS
-    for (i = 1, j = 0; i < gif->palette.colors_count; i *= 2, j++){
-        al_fputc(file, (j ? 128 : 0) + 64 + 32 + 16 + (j ? j - 1 : 0));
-    }
+
+    for (i = 1, j = 0; i < gif->palette.colors_count; i *= 2, j++);
+    al_fputc(file, (j ? 128 : 0) + 64 + 32 + 16 + (j ? j - 1 : 0));
     al_fputc(file, gif->background_index);
     al_fputc(file, 0);        /* No aspect ratio. */
     ////////////////////////////////////////
