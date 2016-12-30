@@ -19,6 +19,7 @@ static ALGIF_ANIMATION *load(char const *name) {
         printf("Could not load %s.\n", name);
         exit(1);
     }
+
     return gif;
 }
 
