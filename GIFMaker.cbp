@@ -38,6 +38,7 @@
 			<Add directory="C:/Allegro/include" />
 		</Compiler>
 		<Unit filename="AllegroTutorials.h" />
+		<Unit filename="Save_gif.h" />
 		<Unit filename="algif5src/algif.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -54,6 +55,8 @@
 		<Unit filename="algif5src/lzw.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="disposeGOAL.gif" />
+		<Unit filename="disposeREACHED.gif" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

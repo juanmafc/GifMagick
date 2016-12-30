@@ -1,8 +1,10 @@
 # depslib dependency file v1.0
-1482870788 source:c:\users\user\documents\gifmaker\main.cpp
+1483047287 source:c:\users\user\documents\gifmaker\main.cpp
 	<stdio.h>
 	<allegro5/allegro.h>
 	"AllegroTutorials.h"
+	"Save_gif.h"
+	"algif5src/algif.h"
 
 1372639132 c:\allegro\include\allegro5\allegro.h
 	"allegro5/base.h"
@@ -257,7 +259,7 @@
 1423979818 source:c:\users\user\documents\gifmaker\algif5src\bitmap.c
 	"algif.h"
 
-1482870763 source:c:\users\user\documents\gifmaker\algif5src\example.c
+1483017598 source:c:\users\user\documents\gifmaker\algif5src\example.c
 	<allegro5/allegro5.h>
 	"algif.h"
 	<stdio.h>
@@ -287,4 +289,10 @@
 	<allegro5/allegro5.h>
 	"algif.h"
 	<stdio.h>
+
+1483075603 c:\users\user\documents\gifmaker\save_gif.h
+	"allegro5/allegro.h"
+	"algif5src/algif.h"
+	<iostream>
+	<fstream>
 
