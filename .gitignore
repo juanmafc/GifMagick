@@ -5,3 +5,8 @@ obj/Release/algif5src/example.o
 *.o
 *.o
 bin/Release/GIFMaker.exe
+*.o
+*.layout
+GIFMaker.cbp
+Thumbs.db
+Thumbs.db
