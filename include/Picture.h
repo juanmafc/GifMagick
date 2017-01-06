@@ -13,6 +13,9 @@ class Picture
         Picture(string picturePath);
         virtual ~Picture();
 
+        int getColumns();
+        int getRows();
+
         float getRedAt(int row, int column);
         float getGreenAt(int row, int column);
         float getBlueAt(int row, int column);

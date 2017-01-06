@@ -10,7 +10,7 @@
 class Screen
 {
     public:
-        Screen();
+        Screen(int columns, int rows);
         virtual ~Screen();
         void displayPicture(Picture& picture);
 
@@ -18,6 +18,9 @@ class Screen
 
     private:
         ALLEGRO_DISPLAY * display;
+
+        int rows;
+        int columns;
 
         void copyPixelsToScreenBuffer(Picture& picture);
         void updateScreen();

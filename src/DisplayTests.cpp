@@ -9,8 +9,9 @@ DisplayTests::~DisplayTests() {
 }
 
 void DisplayTests::displayASingleImage() {
-    Picture picture("hue.bmp");
     //Picture picture("janna.png");
-    Screen screen;
+    //Picture picture("hue.bmp");
+    Picture picture("francella.gif[0]");
+    Screen screen(picture.getColumns(), picture.getRows());
     screen.displayPicture(picture);
 }

@@ -1,6 +1,6 @@
 #include "Screen.h"
 
-Screen::Screen(){
+Screen::Screen(int columns, int rows){
 
     this->display = NULL;
 
@@ -26,7 +26,10 @@ Screen::Screen(){
     }
 */
 ////////////////////////////////////////////////////
-    this->display = al_create_display(800,600);
+    //this->display = al_create_display(800,600);
+    this->display = al_create_display(columns, rows);
+    this->columns = columns;
+    this->rows = rows;
 
     if(!this->display ) {
         al_show_native_message_box(display, "Error", "Error", "Failed to initialize display!", NULL, ALLEGRO_MESSAGEBOX_ERROR);
@@ -48,7 +51,7 @@ Screen::~Screen(){
 void Screen::displayPicture(Picture& picture){
     this->copyPixelsToScreenBuffer(picture);
     this->updateScreen();
-    al_rest(20);
+    al_rest(2);
 }
 
 
@@ -56,8 +59,8 @@ void Screen::copyPixelsToScreenBuffer(Picture& picture) {
     ALLEGRO_BITMAP* displayedBitmap = al_get_backbuffer(this->display);
 
     //TODO: TAL VEZ HAYA QUE SETEAR A MANO EL TARGET
-    for (int row = 0; row < 300; row++){
-        for (int column = 0; column < 400; column++){
+    for (int row = 0; row < this->rows; row++){
+        for (int column = 0; column < this->columns; column++){
             float red = picture.getRedAt(row, column);
             float green = picture.getGreenAt(row, column);
             float blue = picture.getBlueAt(row, column);

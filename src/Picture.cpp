@@ -18,6 +18,18 @@ Picture::~Picture()
 
 
 
+int Picture::getColumns() {
+    return this->image.columns();
+}
+
+int Picture::getRows() {
+    return this->image.rows();
+}
+
+
+
+
+
 
 float Picture::getRedAt(int row, int column) {
     Magick::PixelPacket *pixeles= this->image.getPixels(0,0,this->image.columns(),this->image.rows());
