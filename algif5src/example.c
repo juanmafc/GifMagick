@@ -31,10 +31,12 @@ static ALGIF_ANIMATION *load(char const *name) {
 
 Game *game_new(void) {
     Game *game = (Game*) calloc(1, sizeof *game);
-    game->skeleton[0] = load("skeleton_left.gif");
+    //game->skeleton[0] = load("skeleton_left.gif");
+    game->skeleton[0] = load("francella.gif");
     game->skeleton[1] = load("skeleton_right.gif");
     game->skeleton[2] = load("skeleton_up.gif");
     game->skeleton[3] = load("skeleton_down.gif");
+    //game->skeleton[3] = load("francella.gif");
     return game;
 }
 
@@ -116,7 +118,8 @@ void game_render(Game *game) {
     al_flip_display();
 }
 
-int algifExample(void) {
+//int main(void) {
+int algixExample(void) {
     al_init();
     al_install_keyboard();
     ALLEGRO_DISPLAY *display = al_create_display(640, 480);

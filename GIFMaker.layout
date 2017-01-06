@@ -2,9 +2,69 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="Save_gif.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="giflib\util\gifecho.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="896" topLine="28" />
+			<Cursor1 position="1528" topLine="42" />
+		</Cursor>
+	</File>
+	<File name="giflib\util\giffilter.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1871" topLine="45" />
+		</Cursor>
+	</File>
+	<File name="giflib\util\giffix.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="936" topLine="25" />
+		</Cursor>
+	</File>
+	<File name="giflib\util\gifhisto.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1461" topLine="40" />
+		</Cursor>
+	</File>
+	<File name="giflib\util\gifinto.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1600" topLine="60" />
+		</Cursor>
+	</File>
+	<File name="giflib\util\gifsponge.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1117" topLine="27" />
+		</Cursor>
+	</File>
+	<File name="AllegroTutorials.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="7302" topLine="243" />
+		</Cursor>
+	</File>
+	<File name="giflib\util\giftext.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="6358" topLine="197" />
+		</Cursor>
+	</File>
+	<File name="Save_gif.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4850" topLine="140" />
+		</Cursor>
+	</File>
+	<File name="giflib\util\giftool.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1710" topLine="84" />
+		</Cursor>
+	</File>
+	<File name="algif5src\algif.c" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="579" topLine="9" />
+		</Cursor>
+	</File>
+	<File name="giflib\util\gifwedge.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1082" topLine="36" />
+		</Cursor>
+	</File>
+	<File name="algif5src\algif.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="471" topLine="10" />
 		</Cursor>
 	</File>
 	<File name="algif5src\bitmap.c" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -12,14 +72,24 @@
 			<Cursor1 position="1308" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="algif5src\example.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2552" topLine="93" />
+			<Cursor1 position="948" topLine="30" />
 		</Cursor>
 	</File>
-	<File name="algif5src\algif.h" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="algif5src\example.c" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1060" topLine="26" />
+			<Cursor1 position="3207" topLine="110" />
+		</Cursor>
+	</File>
+	<File name="algif5src\gif.c" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1022" topLine="18" />
+		</Cursor>
+	</File>
+	<File name="algif5src\lzw.c" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2304" topLine="78" />
 		</Cursor>
 	</File>
 	<File name="disposeGOAL.gif" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -27,29 +97,69 @@
 			<Cursor1 position="7" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="main.cpp" open="1" top="1" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="giflib\dgif_lib.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="645" topLine="13" />
+			<Cursor1 position="39076" topLine="1100" />
 		</Cursor>
 	</File>
-	<File name="algif5src\gif.c" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="giflib\gif_lib_private.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="6720" topLine="33" />
+			<Cursor1 position="317" topLine="34" />
 		</Cursor>
 	</File>
-	<File name="algif5src\lzw.c" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="giflib\egif_lib.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2516" topLine="89" />
+			<Cursor1 position="29671" topLine="872" />
 		</Cursor>
 	</File>
-	<File name="AllegroTutorials.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="giflib\gifalloc.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="7302" topLine="243" />
+			<Cursor1 position="203" topLine="45" />
 		</Cursor>
 	</File>
-	<File name="algif5src\algif.c" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="giflib\gif_font.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3382" topLine="83" />
+			<Cursor1 position="10510" topLine="171" />
+		</Cursor>
+	</File>
+	<File name="giflib\util\getarg.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3463" topLine="123" />
+		</Cursor>
+	</File>
+	<File name="giflib\gif_hash.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="274" topLine="14" />
+		</Cursor>
+	</File>
+	<File name="giflib\gif_lib.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="948" topLine="49" />
+		</Cursor>
+	</File>
+	<File name="giflib\util\gif2rgb.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="16605" topLine="505" />
+		</Cursor>
+	</File>
+	<File name="giflib\util\gifbg.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1938" topLine="55" />
+		</Cursor>
+	</File>
+	<File name="giflib\util\gifbuild.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1426" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="giflib\util\gifclrmp.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1541" topLine="253" />
+		</Cursor>
+	</File>
+	<File name="giflib\util\gifcolor.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1214" topLine="141" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

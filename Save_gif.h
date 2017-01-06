@@ -5,8 +5,11 @@
 #include "algif5src/algif.h"
 #include <iostream>
 #include <fstream>
+#include <math.h>
 
 using namespace std;
+
+
 
 
 static void write_palette (ALLEGRO_FILE *file, ALGIF_PALETTE *palette, int bits)
@@ -24,11 +27,41 @@ static void write_palette (ALLEGRO_FILE *file, ALGIF_PALETTE *palette, int bits)
 
 
 static unsigned int colorToInt(ALLEGRO_COLOR color) {
-    unsigned char* colorComponents = new unsigned char[4];
+    unsigned char colorComponents[4];
+    colorComponents[0] = 0;
+    colorComponents[1] = 0;
+    colorComponents[2] = 0;
+    colorComponents[3] = 0;
 
     al_unmap_rgb(color, &colorComponents[0], &colorComponents[1], &colorComponents[2]);
     return (colorComponents[0] << 24) + (colorComponents[1] << 16) + (colorComponents[2] << 8) + colorComponents[3];
 }
+
+
+
+static unsigned char translate255To16(unsigned char numero ) {
+    return (numero * 16 / 255);
+}
+
+static unsigned short colorToShort(ALLEGRO_COLOR color) {
+    unsigned char colorComponents[4];
+    colorComponents[0] = 0;
+    colorComponents[1] = 0;
+    colorComponents[2] = 0;
+    colorComponents[3] = 0;
+
+    al_unmap_rgb(color, &colorComponents[0], &colorComponents[1], &colorComponents[2]);
+    colorComponents[0] = translate255To16(colorComponents[0]);
+    colorComponents[1] = translate255To16(colorComponents[1]);
+    colorComponents[2] = translate255To16(colorComponents[2]);
+    colorComponents[3] = translate255To16(colorComponents[3]);
+
+    return (colorComponents[0] << 12) + (colorComponents[1] << 8) + (colorComponents[0] << 4) + colorComponents[3];
+}
+
+
+
+
 
 
 //static int get_minimum_bitsize (ALGIF_BITMAP *bmp) {
@@ -44,7 +77,9 @@ static int get_minimum_bitsize (ALLEGRO_BITMAP *bmp) {
         for (x = 0; x < w; x++)
         {
             ALLEGRO_COLOR pixel = al_get_pixel(bmp, x, y);
-            unsigned int c = colorToInt(pixel);
+            unsigned int c;// = colorToInt(pixel);
+            c = colorToShort(pixel);
+
             //int c = getpixel (bmp, x, y);
             //cout<<"Color como numero "<<c<<"\n";
             if (c > max)
@@ -89,6 +124,12 @@ static void write_code(ALLEGRO_FILE* file, char *buf, int *bit_pos, int bit_size
 }
 
 
+//static int read_pixel (ALLEGRO_BITMAP *bmp, int pos) {
+static unsigned short read_pixel (ALLEGRO_BITMAP *bmp, int pos) {
+    int w = al_get_bitmap_width(bmp);
+    //return colorToInt( al_get_pixel(bmp, pos % w, pos / w) );
+    return colorToShort( al_get_pixel(bmp, pos % w, pos / w) );
+}
 
 
 
@@ -110,7 +151,8 @@ void LZW_encode (ALLEGRO_FILE* file, ALLEGRO_BITMAP* bmp) {
     }
     codes[4096];                /* Maximum bit size is 12. */
 
-    int code, prev;
+    int code;
+    unsigned int prev;
     int in_pos;
     int n, i;
 
@@ -134,70 +176,79 @@ void LZW_encode (ALLEGRO_FILE* file, ALLEGRO_BITMAP* bmp) {
     bit_pos = 0;
 
     /* Play fair and put a clear marker at the start. */
-//    write_code (file, buf, &bit_pos, bit_size, clear_marker);
-//
-//    prev = read_pixel (bmp, 0);
-//
-//    for (in_pos = 1; in_pos < bmp->w * bmp->h; in_pos++)
-//    {
-//        code = read_pixel (bmp, in_pos);
-//
-//        if (prev != clear_marker)
-//        {
-//            /* Search for the code. */
-//            for (i = end_marker + 1; i < n; i++)
-//            {
-//                if (codes[i].prefix == prev && codes[i].c == code)
-//                {
-//                    code = i;
-//                    break;
-//                }
-//            }
-//
-//            /* If not found, add it, and write previous code. */
-//            if (i == n)
-//            {
-//                codes[n].prefix = prev;
-//                codes[n].len = codes[prev].len + 1;
-//                codes[n].c = code;
-//                n++;
-//
-//                write_code (file, buf, &bit_pos, bit_size, prev);
-//            }
-//        }
-//
-//        /* Out of bits? Increase. */
-//        if (n == 1 + (1 << bit_size))
-//        {
-//            if (bit_size < 12)
-//                bit_size++;
-//        }
-//
-//        /* Too big table? Clear and start over. */
-//        if (n == 4096)
-//        {
-//            write_code (file, buf, &bit_pos, bit_size, clear_marker);
-//            bit_size = orig_bit_size + 1;
-//            n = end_marker + 1;
-//        }
-//
-//        prev = code;
-//    }
-//    write_code (file, buf, &bit_pos, bit_size, prev);
-//    write_code (file, buf, &bit_pos, bit_size, end_marker);
-//    if (bit_pos)
-//    {
-//        int byte_pos = (bit_pos + 7) / 8;
-//
-//        pack_putc (byte_pos, file);
-//        pack_fwrite (buf, byte_pos, file);
-//    }
+    write_code (file, buf, &bit_pos, bit_size, clear_marker);
+
+    prev = read_pixel (bmp, 0);
+
+    int w, h;
+    w = al_get_bitmap_width(bmp);
+    h = al_get_bitmap_height(bmp);
+    for (in_pos = 1; in_pos < w * h; in_pos++)
+    {
+        cout<<"in_pos: "<<in_pos<<" w * h: "<<(w * h)<<"\n";
+        if (in_pos == 1 ) {
+            cout<<"Comienza el debug\n";
+        }
+        code = read_pixel (bmp, in_pos);
+
+        if (prev != clear_marker)
+        {
+            /* Search for the code. */
+            for (i = end_marker + 1; i < n; i++)
+            {
+                if (codes[i].prefix == prev && codes[i].c == code)
+                {
+                    code = i;
+                    break;
+                }
+            }
+
+            /* If not found, add it, and write previous code. */
+            if (i == n)
+            {
+                codes[n].prefix = prev;
+                codes[n].len = codes[prev].len + 1;
+                codes[n].c = code;
+                n++;
+                //CREO QUE CON ESTO SE SOLUCIONA
+
+                write_code (file, buf, &bit_pos, bit_size, prev);
+            }
+        }
+
+        /* Out of bits? Increase. */
+        if (n == 1 + (1 << bit_size))
+        {
+            if (bit_size < 12)
+                bit_size++;
+        }
+
+        /* Too big table? Clear and start over. */
+        if (n == 4096)
+        {
+            write_code (file, buf, &bit_pos, bit_size, clear_marker);
+            bit_size = orig_bit_size + 1;
+            n = end_marker + 1;
+        }
+
+        prev = code;
+    }
+    write_code (file, buf, &bit_pos, bit_size, prev);
+    write_code (file, buf, &bit_pos, bit_size, end_marker);
+    if (bit_pos)
+    {
+        int byte_pos = (bit_pos + 7) / 8;
+
+        al_fputc(file, byte_pos);
+        al_fwrite(file, buf, byte_pos);
+    }
 }
 
 
 
 
 void saveGif(const char* filename, ALGIF_ANIMATION* gif) {
+
     int frame;
     int i, j;
 
@@ -281,12 +332,14 @@ void saveGif(const char* filename, ALGIF_ANIMATION* gif) {
             write_palette (file, &gif->frames[frame].palette, j);
 
 
-        int x, y, max = 0, b = 2;
-        ALGIF_BITMAP* bmp = gif->frames[frame].bitmap_8_bit;
-
         //LZW_encode(file, gif->frames[frame].bitmap_8_bit);
+        ALGIF_BITMAP* bmp = gif->frames[frame].bitmap_8_bit;
         LZW_encode(file, gif->frames[frame].rendered);
+
+        al_fputc(file, 0x00); /* Terminator. */
     }
+
+    al_fputc(file, 0x3b);     /* Trailer. */
 
 
     al_fclose(file);
