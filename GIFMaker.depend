@@ -241,7 +241,7 @@
 1423979818 source:c:\users\user\documents\gifmaker\algif5src\bitmap.c
 	"algif.h"
 
-1483655857 source:c:\users\user\documents\gifmaker\algif5src\example.c
+1483662317 source:c:\users\user\documents\gifmaker\algif5src\example.c
 	<allegro5/allegro5.h>
 	"algif.h"
 	<stdio.h>
@@ -254,7 +254,7 @@
 1423979818 source:c:\users\user\documents\gifmaker\algif5src\lzw.c
 	"algif.h"
 
-1483659650 source:c:\users\user\documents\gifmaker\main.cpp
+1483726974 source:c:\users\user\documents\gifmaker\main.cpp
 	<stdio.h>
 	<allegro5/allegro.h>
 	"AllegroTutorials.h"
@@ -262,6 +262,7 @@
 	"algif5src/algif.h"
 	<Magick++.h>
 	<iostream>
+	"DisplayTests.h"
 	<Magick++.h>
 	<iostream>
 
@@ -808,4 +809,31 @@
 	<string>
 	"Magick++/Color.h"
 	"Magick++/Geometry.h"
+
+1483705799 c:\users\user\documents\gifmaker\include\displaytests.h
+	"Picture.h"
+	"Screen.h"
+
+1483728314 c:\users\user\documents\gifmaker\include\picture.h
+	<iostream>
+	<string>
+	<Magick++.h>
+
+1482772657 source:c:\users\user\documents\gifmaker\include\allegrotutorials.cpp
+
+1483714088 c:\users\user\documents\gifmaker\include\screen.h
+	"Picture.h"
+	<allegro5/allegro.h>
+	"allegro5/allegro_image.h"
+	"allegro5/allegro_primitives.h"
+	"allegro5/allegro_native_dialog.h"
+
+1483727031 source:c:\users\user\documents\gifmaker\src\displaytests.cpp
+	"DisplayTests.h"
+
+1483726932 source:c:\users\user\documents\gifmaker\src\picture.cpp
+	"Picture.h"
+
+1483727136 source:c:\users\user\documents\gifmaker\src\screen.cpp
+	"Screen.h"
 

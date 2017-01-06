@@ -38,21 +38,23 @@
 			<Add option="-Wall" />
 			<Add option="-g" />
 			<Add option="-fexceptions" />
-			<Add option="-Ic:\Users\User\Downloads\ImageMagick-i686-pc-mingw32\ImageMagick-6.8.5\include\ImageMagick-6" />
 			<Add option="-DMAGICKCORE_HDRI_ENABLE=0" />
 			<Add option="-DMAGICKCORE_QUANTUM_DEPTH=16" />
 			<Add option="-DD_DLL" />
 			<Add option="-DD_MT" />
 			<Add directory="C:/Allegro/include" />
-			<Add directory="giflib" />
+			<Add directory="C:/ImageMagick-6.8.5/include/ImageMagick-6" />
+			<Add directory="C:/ImageMagick-6.8.5/include/ImageMagick-6/magick" />
+			<Add directory="C:/ImageMagick-6.8.5/include/ImageMagick-6/Magick++" />
+			<Add directory="C:/ImageMagick-6.8.5/include/ImageMagick-6/wand" />
 		</Compiler>
 		<Linker>
-			<Add option="-LC:/Users/User/Downloads/ImageMagick-i686-pc-mingw32/ImageMagick-6.8.5/lib -lMagick++-6.Q16" />
+			<Add option="-LC:/ImageMagick-6.8.5/lib -lMagick++-6.Q16" />
 			<Add option="-lMagickWand-6.Q16" />
 			<Add option="-lMagickCore-6.Q16" />
-			<Add library="C:/Users/User/Downloads/ImageMagick-i686-pc-mingw32/ImageMagick-6.8.5/lib/libMagick++-6.Q16.dll.a" />
-			<Add library="C:/Users/User/Downloads/ImageMagick-i686-pc-mingw32/ImageMagick-6.8.5/lib/libMagickCore-6.Q16.dll.a" />
-			<Add library="C:/Users/User/Downloads/ImageMagick-i686-pc-mingw32/ImageMagick-6.8.5/lib/libMagickWand-6.Q16.dll.a" />
+			<Add library="C:/ImageMagick-6.8.5/lib/libMagick++-6.Q16.dll.a" />
+			<Add library="C:/ImageMagick-6.8.5/lib/libMagickCore-6.Q16.dll.a" />
+			<Add library="C:/ImageMagick-6.8.5/lib/libMagickWand-6.Q16.dll.a" />
 		</Linker>
 		<Unit filename="AllegroTutorials.h" />
 		<Unit filename="Save_gif.h" />
@@ -74,82 +76,6 @@
 		</Unit>
 		<Unit filename="disposeGOAL.gif" />
 		<Unit filename="disposeREACHED.gif" />
-		<Unit filename="giflib/dgif_lib.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="giflib/egif_lib.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="giflib/gif_err.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="giflib/gif_font.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="giflib/gif_hash.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="giflib/gif_hash.h" />
-		<Unit filename="giflib/gif_lib.h" />
-		<Unit filename="giflib/gif_lib_private.h" />
-		<Unit filename="giflib/gifalloc.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="giflib/openbsd-reallocarray.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="giflib/quantize.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="giflib/util/getarg.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="giflib/util/getarg.h" />
-		<Unit filename="giflib/util/gif2rgb.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="giflib/util/gifbg.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="giflib/util/gifbuild.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="giflib/util/gifclrmp.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="giflib/util/gifcolor.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="giflib/util/gifecho.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="giflib/util/giffilter.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="giflib/util/giffix.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="giflib/util/gifhisto.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="giflib/util/gifinto.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="giflib/util/gifsponge.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="giflib/util/giftext.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="giflib/util/giftool.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="giflib/util/gifwedge.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="giflib/util/qprintf.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
