@@ -46,14 +46,9 @@ Screen::~Screen(){
 
 
 void Screen::displayPicture(Picture& picture){
-
     this->copyPixelsToScreenBuffer(picture);
-//    this->updateScreen();
-
-    //al_draw_bitmap(image,0,0,0);
-    al_flip_display();
+    this->updateScreen();
     al_rest(20);
-    return;
 }
 
 
@@ -61,15 +56,16 @@ void Screen::copyPixelsToScreenBuffer(Picture& picture) {
     ALLEGRO_BITMAP* displayedBitmap = al_get_backbuffer(this->display);
 
     //TODO: TAL VEZ HAYA QUE SETEAR A MANO EL TARGET
-
     for (int row = 0; row < 300; row++){
         for (int column = 0; column < 400; column++){
             float red = picture.getRedAt(row, column);
             float green = picture.getGreenAt(row, column);
             float blue = picture.getBlueAt(row, column);
-
             al_put_pixel(column, row, al_map_rgb_f(red, green, blue));
         }
     }
 }
 
+void Screen::updateScreen() {
+    al_flip_display();
+}

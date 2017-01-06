@@ -18,7 +18,9 @@ class Screen
 
     private:
         ALLEGRO_DISPLAY * display;
+
         void copyPixelsToScreenBuffer(Picture& picture);
+        void updateScreen();
 };
 
 #endif // SCREEN_H
