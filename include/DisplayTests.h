@@ -11,6 +11,7 @@ class DisplayTests
         virtual ~DisplayTests();
 
         static void displayASingleImage();
+        static void displayTwoImages();
 
     protected:
 
