@@ -11,6 +11,7 @@ class Picture
 {
     public:
         Picture(string picturePath);
+        Picture(Magick::Image* image);
         virtual ~Picture();
 
         int getColumns();
@@ -23,7 +24,7 @@ class Picture
     protected:
 
     private:
-        Magick::Image image;
+        Magick::Image* image;
 };
 
 #endif // PICTURE_H

@@ -3,6 +3,7 @@
 
 #include "Picture.h"
 #include "Screen.h"
+#include "Gif.h"
 
 class DisplayTests
 {
@@ -12,6 +13,7 @@ class DisplayTests
 
         static void displayASingleImage();
         static void displayTwoImages();
+        static void displayATwoFramesGifOneTime();
 
     protected:
 

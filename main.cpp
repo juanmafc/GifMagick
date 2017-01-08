@@ -43,22 +43,17 @@ int main(int argc,char **argv){
 */
 
 
-/*
-  DisplayTests::displayASingleImage();
-  DisplayTests::displayTwoImages();
-*/
-
-    ImageMagickTests::coalesceImagesTest();
-    ImageMagickTests::pixelHandlingTest();
 
 
+    //ImageMagickTests::coalesceImagesTest();
+    //ImageMagickTests::pixelHandlingTest();
 
 
+    //DisplayTests::displayASingleImage();
+    //DisplayTests::displayTwoImages();
+    DisplayTests::displayATwoFramesGifOneTime();
 
 
-/////////////////////////////////////////////////
-
-////////////////////////////////////
   return 0;
 }
 
@@ -124,4 +119,18 @@ int main(int argc, char **argv){
     ALGIF_ANIMATION* spookyScary = load("disposeGOAL.gif");
     saveGif("disposeREACHED.gif", spookyScary);
 }
+*/
+
+
+
+/*
+    vector<Image> frames;
+    readImages(&frames, "buckleupTeddy.gif");
+    coalesceImages(&frames, frames.begin(), frames.end());
+
+    list<Image> myFrames;
+    myFrames.push_back(frames[0]);
+    myFrames.push_back(frames[9]);
+
+    writeImages(myFrames.begin(), myFrames.end(), "twoFrames.gif");
 */

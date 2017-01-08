@@ -12,7 +12,7 @@ class Screen
     public:
         Screen(int columns, int rows);
         virtual ~Screen();
-        void displayPicture(Picture& picture);
+        void displayPicture(Picture* picture);
 
     protected:
 
@@ -22,7 +22,7 @@ class Screen
         int rows;
         int columns;
 
-        void copyPixelsToScreenBuffer(Picture& picture);
+        void copyPixelsToScreenBuffer(Picture* picture);
         void updateScreen();
 };
 
