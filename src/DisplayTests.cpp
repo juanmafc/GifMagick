@@ -9,6 +9,7 @@ DisplayTests::~DisplayTests() {
 }
 
 void DisplayTests::displayASingleImage() {
+    al_init();
     Picture picture("janna.png");
     //Picture picture("hue.bmp");
     //Picture picture("francella.gif[0]");
@@ -17,6 +18,7 @@ void DisplayTests::displayASingleImage() {
 }
 
 void DisplayTests::displayTwoImages() {
+    al_init();
     Picture f0("francella.gif[0]");
     Picture f1("francella.gif[1]");
 
@@ -30,12 +32,13 @@ void DisplayTests::displayTwoImages() {
 
 
 void DisplayTests::displayATwoFramesGifOneTime() {
+    al_init();
     Gif twoFramesGif("twoFrames.gif");
     //Gif twoFramesGif("buckleupTeddy.gif");
     //TODO: ver las columnas y rows del gif son las mismas del primer frame o si necesita algo mas
-    cout<<"Se creo el gif\n";
     Screen screen(twoFramesGif.getColumns(), twoFramesGif.getRows());
-    cout<<"Pasaron los getters\n";
+
+
 
     screen.displayPicture(twoFramesGif.getFrame(0));
     screen.displayPicture(twoFramesGif.getFrame(1));
