@@ -10,12 +10,34 @@ Picture::Picture(string picturePath) {
         cout << "Caught exception: " << error_.what() << endl;
         return;
     }
+    this->renderImage();
 }
 
 
 Picture::Picture(Magick::Image* image) {
     this->image = image;
+    this->renderImage();
 }
+
+
+void Picture::renderImage() {
+    //TODO: IMPORTANTE PARA QUE ESTO FUNCIONE ALLEGRO DEBE SER INICIALIZADO ANTES
+    this->renderedImage = al_create_bitmap(this->getColumns(), this->getRows());
+    al_set_target_bitmap( this->getRenderedImage() );
+    for (int row = 0; row < this->getRows(); row++){
+        for (int column = 0; column < this->getColumns(); column++){
+            float red = this->getRedAt(row, column);
+            float green = this->getGreenAt(row, column);
+            float blue = this->getBlueAt(row, column);
+            al_put_pixel(column, row, al_map_rgb_f(red, green, blue));
+        }
+    }
+}
+
+
+
+
+
 
 
 Picture::~Picture() {
@@ -60,8 +82,9 @@ float Picture::getBlueAt(int row, int column) {
 
 
 
-
-
+ALLEGRO_BITMAP* Picture::getRenderedImage() {
+    return this->renderedImage;
+}
 
 
 

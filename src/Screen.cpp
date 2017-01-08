@@ -4,11 +4,6 @@ Screen::Screen(int columns, int rows){
 
     this->display = NULL;
 
-    if(!al_init()) {
-      al_show_native_message_box(display, "Error", "Error", "Failed to initialize allegro!", NULL, ALLEGRO_MESSAGEBOX_ERROR);
-      return;
-    }
-
 //TODO: ESTO SIRVE Y/O ES NECESARIO?
 //This registers bitmap format handlers for al_load_bitmap, al_load_bitmap_f, al_save_bitmap, al_save_bitmap_f.
 //Por ahora me parece que no
@@ -56,6 +51,7 @@ void Screen::displayPicture(Picture* picture){
 
 
 void Screen::copyPixelsToScreenBuffer(Picture* picture) {
+    /*
     ALLEGRO_BITMAP* displayedBitmap = al_get_backbuffer(this->display);
 
     //TODO: TAL VEZ HAYA QUE SETEAR A MANO EL TARGET
@@ -67,6 +63,10 @@ void Screen::copyPixelsToScreenBuffer(Picture* picture) {
             al_put_pixel(column, row, al_map_rgb_f(red, green, blue));
         }
     }
+    */
+    ALLEGRO_BITMAP* displayedBitmap = picture->getRenderedImage();
+    al_set_target_backbuffer(this->display);
+    al_draw_bitmap(displayedBitmap, 0, 0, 0);
 }
 
 void Screen::updateScreen() {
