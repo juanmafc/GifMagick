@@ -88,6 +88,7 @@ void game_render(Game *game) {
     al_clear_to_color(al_map_rgb_f(0, 0, 0));
     al_draw_bitmap(algif_get_bitmap(game->skeleton[game->dir], al_get_time()), game->player_x, game->player_y, 0);
 
+/*
     ALLEGRO_BITMAP* primerFrame = algif_get_frame_bitmap(game->skeleton[game->dir], 0);
 
     ALLEGRO_BITMAP* mapaExtra = al_create_bitmap(25,25);
@@ -110,7 +111,7 @@ void game_render(Game *game) {
     al_set_target_bitmap(algif_get_frame_bitmap(game->skeleton[game->dir], 4));
     al_draw_bitmap(mapaExtra, 40,0,0);
 
-
+*/
 
 
     al_set_target_bitmap( al_get_backbuffer( al_get_current_display() ) );
