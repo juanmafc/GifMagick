@@ -17,12 +17,16 @@ class Gif
         int getColumns();
         int getRows();
 
+        int getFramesCount();
         Picture* getFrame(int frameNumber);
+
+        double getTotalDuration();
 
     protected:
 
     private:
         vector<Picture*> frames;
+        double totalDuration = 0;
 };
 
 #endif // GIF_H

@@ -11,13 +11,16 @@ Gif::Gif(string gifPath) {
     */
     list<Magick::Image> magickFrames;
     Magick::readImages(&magickFrames, gifPath);
+    Magick::coalesceImages(&magickFrames, magickFrames.begin(), magickFrames.end());
     int i = 1;
     int cantidad = magickFrames.size();
     for (list<Magick::Image>::iterator it = magickFrames.begin(); it != magickFrames.end(); ++it) {
         //Magick::Image* currentFrame = &(*it);
         //this->frames.push_back( new Picture(currentFrame)) ;
         cout<<"Cargando el frame "<<i<<" de "<<cantidad<<"\n";
-        this->frames.push_back( new Picture(new Magick::Image(*it))) ;
+        Picture* frame = new Picture(new Magick::Image(*it));
+        this->frames.push_back(  frame ) ;
+        this->totalDuration += frame->getDuration();
         i++;
     }
 }
@@ -43,5 +46,22 @@ int Gif::getRows() {
 Picture* Gif::getFrame(int frameNumber) {
     return (this->frames[frameNumber]);
 }
+
+
+
+int Gif::getFramesCount() {
+    return this->frames.size();
+
+}
+
+double Gif::getTotalDuration() {
+    return this->totalDuration;
+}
+
+
+
+
+
+
 
 
