@@ -241,7 +241,7 @@
 1423979818 source:c:\users\user\documents\gifmaker\algif5src\bitmap.c
 	"algif.h"
 
-1483662317 source:c:\users\user\documents\gifmaker\algif5src\example.c
+1483962813 source:c:\users\user\documents\gifmaker\algif5src\example.c
 	<allegro5/allegro5.h>
 	"algif.h"
 	<stdio.h>
@@ -254,7 +254,9 @@
 1423979818 source:c:\users\user\documents\gifmaker\algif5src\lzw.c
 	"algif.h"
 
-1483726974 source:c:\users\user\documents\gifmaker\main.cpp
+1482772657 source:c:\users\user\documents\gifmaker\include\allegrotutorials.cpp
+
+1483933794 source:c:\users\user\documents\gifmaker\main.cpp
 	<stdio.h>
 	<allegro5/allegro.h>
 	"AllegroTutorials.h"
@@ -263,6 +265,8 @@
 	<Magick++.h>
 	<iostream>
 	"DisplayTests.h"
+	"ImageMagickTests.h"
+	<vector>
 	<Magick++.h>
 	<iostream>
 
@@ -284,10 +288,6 @@
 	<iostream>
 	<fstream>
 	<math.h>
-
-1459611330 c:\users\user\documents\gifmaker\giflib\gif_lib.h
-	<stddef.h>
-	<stdbool.h>
 
 1369316128 c:\imagemagick-6.8.5\include\imagemagick-6\magick++.h
 	<Magick++/Include.h>
@@ -810,30 +810,50 @@
 	"Magick++/Color.h"
 	"Magick++/Geometry.h"
 
-1483705799 c:\users\user\documents\gifmaker\include\displaytests.h
+1483961182 c:\users\user\documents\gifmaker\include\displaytests.h
 	"Picture.h"
 	"Screen.h"
+	"Gif.h"
+	<stdio.h>
 
-1483728314 c:\users\user\documents\gifmaker\include\picture.h
+1483964377 c:\users\user\documents\gifmaker\include\picture.h
 	<iostream>
 	<string>
 	<Magick++.h>
+	<allegro5/allegro.h>
+	"allegro5/allegro_image.h"
+	"allegro5/allegro_primitives.h"
+	"allegro5/allegro_native_dialog.h"
 
-1482772657 source:c:\users\user\documents\gifmaker\include\allegrotutorials.cpp
-
-1483714088 c:\users\user\documents\gifmaker\include\screen.h
+1483964680 c:\users\user\documents\gifmaker\include\screen.h
 	"Picture.h"
 	<allegro5/allegro.h>
 	"allegro5/allegro_image.h"
 	"allegro5/allegro_primitives.h"
 	"allegro5/allegro_native_dialog.h"
 
-1483727031 source:c:\users\user\documents\gifmaker\src\displaytests.cpp
+1483964959 c:\users\user\documents\gifmaker\include\gif.h
+	"Magick++.h"
+	"Picture.h"
+	<vector>
+
+1483802398 c:\users\user\documents\gifmaker\include\imagemagicktests.h
+	"Magick++.h"
+	"Picture.h"
+	<vector>
+
+1483968167 source:c:\users\user\documents\gifmaker\src\displaytests.cpp
 	"DisplayTests.h"
 
-1483726932 source:c:\users\user\documents\gifmaker\src\picture.cpp
+1483826412 source:c:\users\user\documents\gifmaker\src\imagemagicktests.cpp
+	"ImageMagickTests.h"
+
+1483967272 source:c:\users\user\documents\gifmaker\src\picture.cpp
 	"Picture.h"
 
-1483727136 source:c:\users\user\documents\gifmaker\src\screen.cpp
+1483967351 source:c:\users\user\documents\gifmaker\src\screen.cpp
 	"Screen.h"
+
+1483968233 source:c:\users\user\documents\gifmaker\src\gif.cpp
+	"Gif.h"
 

@@ -2,29 +2,49 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="main.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+	<File name="AllegroTutorials.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="323" topLine="21" />
+			<Cursor1 position="2075" topLine="87" />
 		</Cursor>
 	</File>
-	<File name="AllegroTutorials.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Save_gif.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="5524" topLine="0" />
+			<Cursor1 position="4709" topLine="71" />
 		</Cursor>
 	</File>
-	<File name="Save_gif.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+	<File name="include\Gif.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2287" topLine="75" />
+			<Cursor1 position="475" topLine="9" />
 		</Cursor>
 	</File>
-	<File name="algif5src\algif.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\ImageMagickTests.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="836" topLine="13" />
+			<Cursor1 position="343" topLine="33" />
+		</Cursor>
+	</File>
+	<File name="src\Screen.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2169" topLine="56" />
+		</Cursor>
+	</File>
+	<File name="src\Gif.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="824" topLine="5" />
+		</Cursor>
+	</File>
+	<File name="include\ImageMagickTests.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="240" topLine="4" />
 		</Cursor>
 	</File>
 	<File name="algif5src\algif.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="471" topLine="10" />
+			<Cursor1 position="1612" topLine="52" />
+		</Cursor>
+	</File>
+	<File name="include\DisplayTests.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="129" topLine="5" />
 		</Cursor>
 	</File>
 	<File name="algif5src\bitmap.c" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -32,14 +52,19 @@
 			<Cursor1 position="1308" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="algif5src\example.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="algif5src\algif.c" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3259" topLine="109" />
+			<Cursor1 position="3153" topLine="83" />
 		</Cursor>
 	</File>
-	<File name="algif5src\gif.c" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1022" topLine="18" />
+			<Cursor1 position="1287" topLine="35" />
+		</Cursor>
+	</File>
+	<File name="src\DisplayTests.cpp" open="1" top="1" tabpos="3" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2047" topLine="82" />
 		</Cursor>
 	</File>
 	<File name="algif5src\lzw.c" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -47,9 +72,34 @@
 			<Cursor1 position="2304" topLine="78" />
 		</Cursor>
 	</File>
+	<File name="algif5src\example.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2254" topLine="76" />
+		</Cursor>
+	</File>
 	<File name="disposeGOAL.gif" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="7" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\Screen.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="403" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="algif5src\gif.c" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1022" topLine="18" />
+		</Cursor>
+	</File>
+	<File name="include\Picture.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="526" topLine="13" />
+		</Cursor>
+	</File>
+	<File name="src\Picture.cpp" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2376" topLine="75" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
