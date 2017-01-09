@@ -73,21 +73,6 @@ Picture* getFrameEnBaseELTIempo(Gif* gif, double seconds) {
 
 
 
-
-
-
-void gif_render() {
-    //al_draw_bitmap(algif_get_bitmap(game->skeleton[game->dir], al_get_time()), game->player_x, game->player_y, 0);
-}
-
-
-
-
-
-
-
-
-
 void DisplayTests::displayATwoFramesLoopedGif() {
     al_init();
     //Gif twoFramesGif("twoFrames.gif");
