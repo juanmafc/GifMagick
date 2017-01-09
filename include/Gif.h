@@ -2,7 +2,7 @@
 #define GIF_H
 
 #include "Magick++.h"
-#include "Picture.h"
+#include "Frame.h"
 #include <vector>
 
 using namespace std;
@@ -18,14 +18,14 @@ class Gif
         int getRows();
 
         int getFramesCount();
-        Picture* getFrame(int frameNumber);
+        Frame* getFrame(int frameNumber);
 
         double getTotalDuration();
 
     protected:
 
     private:
-        vector<Picture*> frames;
+        vector<Frame*> frames;
         double totalDuration = 0;
 };
 
