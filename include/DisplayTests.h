@@ -3,6 +3,7 @@
 
 #include "Picture.h"
 #include "Screen.h"
+#include "Clock.h"
 #include "Gif.h"
 #include <stdio.h>
 

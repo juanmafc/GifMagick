@@ -76,22 +76,37 @@ Picture* getFrameEnBaseELTIempo(Gif* gif, double seconds) {
 void DisplayTests::displayATwoFramesLoopedGif() {
     al_init();
     //Gif twoFramesGif("twoFrames.gif");
-    Gif twoFramesGif("buckleupTeddy.gif");
+    //Gif twoFramesGif("buckleupTeddy.gif");
+    Gif twoFramesGif("buckleupTeddy.gif[0-9]");
     //Gif twoFramesGif("disposeGOAL.gif");
     //Gif twoFramesGif("skeleton_left.gif");
     //Gif twoFramesGif("francella.gif[0-20]");
     Screen screen(twoFramesGif.getColumns(), twoFramesGif.getRows());
 
+
+
+    Clock timer(1 / 60.0);
+    //ALLEGRO_TIMER *timer = al_create_timer();
+
+
     ALLEGRO_EVENT_QUEUE *event_queue = al_create_event_queue();
-    ALLEGRO_TIMER *timer = al_create_timer(1 / 60.0);
+
 
     //TODO: refactorizar esto, no me gusta tener que tener el metodo getDisplay:
-    al_register_event_source(event_queue, al_get_display_event_source( screen.getDisplay() ));
-    al_register_event_source(event_queue, al_get_timer_event_source(timer));
+    //al_register_event_source(event_queue, al_get_display_event_source( screen.getDisplay() ));
+    //al_register_event_source(event_queue, al_get_timer_event_source(timer));
+    screen.registerIn( event_queue );
+    timer.registerIn( event_queue );
+
+
+
+
+
 
     bool quit = false;
     bool redraw = true;
-    al_start_timer(timer);
+    timer.start();
+
     while (!quit) {
         if (redraw) {
             screen.displayPicture( getFrameEnBaseELTIempo(&twoFramesGif, al_get_time()) );
@@ -111,6 +126,7 @@ void DisplayTests::displayATwoFramesLoopedGif() {
             }
         }
     }
+    al_destroy_event_queue(event_queue);
 }
 
 
