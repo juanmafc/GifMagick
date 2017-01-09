@@ -51,7 +51,8 @@ int main(int argc,char **argv){
 
     //DisplayTests::displayASingleImage();
     //DisplayTests::displayTwoImages();
-    DisplayTests::displayATwoFramesGifOneTime();
+    //DisplayTests::displayATwoFramesGifOneTime();
+    DisplayTests::displayATwoFramesLoopedGif();
 
 
   return 0;

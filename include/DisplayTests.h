@@ -4,6 +4,7 @@
 #include "Picture.h"
 #include "Screen.h"
 #include "Gif.h"
+#include <stdio.h>
 
 class DisplayTests
 {
@@ -14,6 +15,7 @@ class DisplayTests
         static void displayASingleImage();
         static void displayTwoImages();
         static void displayATwoFramesGifOneTime();
+        static void displayATwoFramesLoopedGif();
 
     protected:
 
