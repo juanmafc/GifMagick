@@ -74,11 +74,14 @@ void Screen::updateScreen() {
 }
 
 
-
-
-ALLEGRO_DISPLAY* Screen::getDisplay() {
-    return this->display;
+void Screen::registerIn(ALLEGRO_EVENT_QUEUE* event_queue) {
+    al_register_event_source(event_queue, al_get_display_event_source( this->display ));
 }
+
+
+
+
+
 
 
 

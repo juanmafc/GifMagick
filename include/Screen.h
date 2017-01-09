@@ -2,19 +2,21 @@
 #define SCREEN_H
 
 #include "Picture.h"
+#include "EventSource.h"
+
 #include <allegro5/allegro.h>
 #include "allegro5/allegro_image.h"
 #include "allegro5/allegro_primitives.h"
 #include "allegro5/allegro_native_dialog.h"
 
-class Screen
+class Screen : public EventSource
 {
     public:
         Screen(int columns, int rows);
         virtual ~Screen();
         void displayPicture(Picture* picture);
 
-        ALLEGRO_DISPLAY* getDisplay();
+        void registerIn(ALLEGRO_EVENT_QUEUE* event_queue);
 
     protected:
 
