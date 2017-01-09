@@ -29,6 +29,9 @@ class Picture
         float getGreenAt(int row, int column);
         float getBlueAt(int row, int column);
 
+        //TODO: moverlo a una clse "Frame"
+        double getDuration();
+
     protected:
 
     private:

@@ -89,4 +89,9 @@ ALLEGRO_BITMAP* Picture::getRenderedImage() {
 
 
 
+double Picture::getDuration() {
+    return this->image->animationDelay()/100.0;
+}
+
+
 
