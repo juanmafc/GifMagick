@@ -11,10 +11,14 @@ Gif::Gif(string gifPath) {
     */
     list<Magick::Image> magickFrames;
     Magick::readImages(&magickFrames, gifPath);
+    int i = 1;
+    int cantidad = magickFrames.size();
     for (list<Magick::Image>::iterator it = magickFrames.begin(); it != magickFrames.end(); ++it) {
         //Magick::Image* currentFrame = &(*it);
         //this->frames.push_back( new Picture(currentFrame)) ;
+        cout<<"Cargando el frame "<<i<<" de "<<cantidad<<"\n";
         this->frames.push_back( new Picture(new Magick::Image(*it))) ;
+        i++;
     }
 }
 
