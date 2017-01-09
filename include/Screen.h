@@ -14,6 +14,8 @@ class Screen
         virtual ~Screen();
         void displayPicture(Picture* picture);
 
+        ALLEGRO_DISPLAY* getDisplay();
+
     protected:
 
     private:

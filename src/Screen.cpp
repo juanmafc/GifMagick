@@ -46,7 +46,7 @@ Screen::~Screen(){
 void Screen::displayPicture(Picture* picture){
     this->copyPixelsToScreenBuffer(picture);
     this->updateScreen();
-    al_rest(2);
+    //al_rest(2);
 }
 
 
@@ -72,3 +72,14 @@ void Screen::copyPixelsToScreenBuffer(Picture* picture) {
 void Screen::updateScreen() {
     al_flip_display();
 }
+
+
+
+
+ALLEGRO_DISPLAY* Screen::getDisplay() {
+    return this->display;
+}
+
+
+
+
