@@ -57,7 +57,7 @@ void DisplayTests::displayATwoFramesGifOneTime() {
 
 
 
-Picture* getFrameEnBaseELTIempo(Gif* gif, double seconds) {
+Picture* DisplayTests::getFrameEnBaseELTIempo(Gif* gif, double seconds) {
     int n = gif->getFramesCount();
     seconds = fmod(seconds, gif->getTotalDuration());/// 100.0);
     double d = 0;
@@ -90,21 +90,15 @@ void DisplayTests::displayATwoFramesLoopedGif() {
 
 
     ALLEGRO_EVENT_QUEUE *event_queue = al_create_event_queue();
-
-
     //TODO: refactorizar esto, no me gusta tener que tener el metodo getDisplay:
     //al_register_event_source(event_queue, al_get_display_event_source( screen.getDisplay() ));
     //al_register_event_source(event_queue, al_get_timer_event_source(timer));
     screen.registerIn( event_queue );
     timer.registerIn( event_queue );
 
-
-
-
-
-
     bool quit = false;
     bool redraw = true;
+
     timer.start();
 
     while (!quit) {
@@ -128,6 +122,20 @@ void DisplayTests::displayATwoFramesLoopedGif() {
     }
     al_destroy_event_queue(event_queue);
 }
+
+
+
+void DisplayTests::displayALoopedGifUsingMainController() {
+    MainController main;
+    main.startMainLoop("buckleupTeddy.gif[0-9]");
+}
+
+
+
+
+
+
+
 
 
 

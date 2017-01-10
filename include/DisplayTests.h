@@ -5,6 +5,7 @@
 #include "Screen.h"
 #include "Clock.h"
 #include "Gif.h"
+#include "MainController.h"
 #include <stdio.h>
 
 class DisplayTests
@@ -17,10 +18,12 @@ class DisplayTests
         static void displayTwoImages();
         static void displayATwoFramesGifOneTime();
         static void displayATwoFramesLoopedGif();
+        static void displayALoopedGifUsingMainController();
 
     protected:
 
     private:
+        static Picture* getFrameEnBaseELTIempo(Gif* gif, double seconds);
 };
 
 #endif // DISPLAYTESTS_H
