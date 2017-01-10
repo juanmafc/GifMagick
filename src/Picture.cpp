@@ -39,9 +39,9 @@ void Picture::renderImage() {
 
 
 
-
 Picture::~Picture() {
     delete this->image;
+    al_destroy_bitmap(this->renderedImage);
 }
 
 

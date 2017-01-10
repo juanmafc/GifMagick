@@ -5,7 +5,6 @@ Clock::Clock(double time) {
 }
 
 Clock::~Clock() {
-    //dtor
     al_destroy_timer(this->timer);
 }
 
