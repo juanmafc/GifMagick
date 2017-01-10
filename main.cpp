@@ -9,6 +9,7 @@
 
 #include "DisplayTests.h"
 #include "ImageMagickTests.h"
+#include "InterpolationTests.h"
 
 #include <vector>
 
@@ -53,7 +54,9 @@ int main(int argc,char **argv){
     //DisplayTests::displayTwoImages();
     //DisplayTests::displayATwoFramesGifOneTime();
     //DisplayTests::displayATwoFramesLoopedGif();
-    DisplayTests::displayALoopedGifUsingMainController();
+    //DisplayTests::displayALoopedGifUsingMainController();
+
+    InterpolationTests::getMouseCoordinatesOnClick();
 
 
   return 0;
