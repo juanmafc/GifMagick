@@ -5,6 +5,10 @@
 #include <allegro5/allegro.h>
 #include <iostream>
 
+//#include "InterpolationMethod.h"
+#include "LinearInterpolation.h"
+
+
 using namespace std;
 
 class InterpolationTests
@@ -14,6 +18,7 @@ class InterpolationTests
         virtual ~InterpolationTests();
 
         static void getMouseCoordinatesOnClick();
+        static void linearInterpolationTest();
 
     protected:
 

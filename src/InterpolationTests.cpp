@@ -1,5 +1,7 @@
 #include "InterpolationTests.h"
 
+using namespace std;
+
 InterpolationTests::InterpolationTests()
 {
     //ctor
@@ -41,3 +43,23 @@ void InterpolationTests::getMouseCoordinatesOnClick() {
     al_destroy_event_queue(event_queue);
 }
 
+
+
+
+void InterpolationTests::linearInterpolationTest() {
+    InterpolationMethod* interpol = new LinearInterpolation();
+    vector<Point> originalPoints, interpolatedPoints;
+
+    originalPoints.push_back(Point(1,10));
+    originalPoints.push_back(Point(10,1));
+
+
+    int interpolatedPointsCount = 10;
+    interpol->interpolate(originalPoints, interpolatedPointsCount, interpolatedPoints);
+
+    for (int i = 0; i < interpolatedPointsCount; i++) {
+        cout<<"Xinter:"<<interpolatedPoints[i].getX()<<"  Yinter:"<<interpolatedPoints[i].getY()<<"\n";
+    }
+    cout<<"interpolatedPointsSize: "<<interpolatedPoints.size()<"\n";
+    delete interpol;
+}
