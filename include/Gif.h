@@ -19,6 +19,7 @@ class Gif
 
         int getFramesCount();
         Frame* getFrame(int frameNumber);
+        Frame* getFrameForAGivenTime(double seconds);
 
         double getTotalDuration();
 

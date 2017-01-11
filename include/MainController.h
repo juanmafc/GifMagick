@@ -18,7 +18,6 @@ class MainController
     protected:
 
     private:
-        Picture* getFrameForAGivenTime(Gif* gif, double seconds);
 
 };
 

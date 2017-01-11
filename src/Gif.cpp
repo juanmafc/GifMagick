@@ -48,6 +48,28 @@ Frame* Gif::getFrame(int frameNumber) {
 }
 
 
+Frame* Gif::getFrameForAGivenTime(double seconds) {
+    int n = this->getFramesCount();
+    seconds = fmod(seconds, this->getTotalDuration());/// 100.0);
+    double d = 0;
+    int i;
+    //TODO: esto se podria optimizar pero no creo que aora valga la pena
+    for (i = 0; i < n; i++) {
+        d += this->getFrame(i)->getDuration();/// 100.0;
+        if (seconds < d)
+            return this->getFrame(i);
+    }
+    return this->getFrame(0);
+}
+
+
+
+
+
+
+
+
+
 
 int Gif::getFramesCount() {
     return this->frames.size();

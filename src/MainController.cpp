@@ -11,8 +11,8 @@ MainController::~MainController() {
 
 void MainController::startMainLoop(string gifPath) {
 
-    Gif twoFramesGif(gifPath);
-    Screen screen(twoFramesGif.getColumns(), twoFramesGif.getRows());
+    Gif gif(gifPath);
+    Screen screen(gif.getColumns(), gif.getRows());
     Clock timer(1 / 60.0);
 
     ALLEGRO_EVENT_QUEUE *event_queue = al_create_event_queue();
@@ -27,7 +27,7 @@ void MainController::startMainLoop(string gifPath) {
 
     while (!quit) {
         if (redraw) {
-            screen.displayPicture( this->getFrameForAGivenTime(&twoFramesGif, al_get_time()) );
+            screen.displayPicture( gif.getFrameForAGivenTime( al_get_time() ) );
             redraw = false;
         }
 
@@ -45,22 +45,4 @@ void MainController::startMainLoop(string gifPath) {
         }
     }
     al_destroy_event_queue(event_queue);
-}
-
-
-
-
-//TODO: Esto moverlo a gif
-Picture* MainController::getFrameForAGivenTime(Gif* gif, double seconds) {
-    int n = gif->getFramesCount();
-    seconds = fmod(seconds, gif->getTotalDuration());/// 100.0);
-    double d = 0;
-    int i;
-    //TODO: esto se podria optimizar pero no creo que aora valga la pena
-    for (i = 0; i < n; i++) {
-        d += gif->getFrame(i)->getDuration();/// 100.0;
-        if (seconds < d)
-            return gif->getFrame(i);
-    }
-    return gif->getFrame(0);
 }
