@@ -3,6 +3,7 @@
 MainController::MainController() {
     al_init();
     al_install_keyboard();
+    al_install_mouse();
 }
 
 MainController::~MainController() {
@@ -20,8 +21,9 @@ void MainController::startMainLoop(string gifPath) {
     screen.registerIn( event_queue );
     timer.registerIn( event_queue );
 
-    //TODO: refactorizar???
+    //TODO: refactorizar keyboard y mouse???
     al_register_event_source(event_queue, al_get_keyboard_event_source());
+    al_register_event_source(event_queue, al_get_mouse_event_source());
 
 
     bool quit = false;
@@ -55,6 +57,16 @@ void MainController::startMainLoop(string gifPath) {
             }
             else if (event.type == ALLEGRO_EVENT_TIMER) {
                 redraw = true;
+            }
+            else if(event.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
+                //TODO: esto debe hacerse SOLO si esta en el estado pausado... so ...State????
+                cout<<"X:"<<event.mouse.x<<"  Y:"<<event.mouse.y<<"\n";
+                //TODO: lista de cosas pra hacer con el mouse
+                //Saco las coordenadas del 1er pto y el frame en que se clickea
+                //saco las coordenadas del 2do pto y el frame en que se clickea
+                //interpolo usando la interpolacion lineal, necesito (frame2 - frame1) + 1 puntos interpolados
+                //Necesito dibujar la imagen a interpolar en los frames indicados
+                //...Y ademas necesito poder setear la imagen a dibujar
             }
             else if (event.type == ALLEGRO_EVENT_KEY_DOWN ) {
                 //TODO: refactorizar con una clase "Keyboard" maybe...., un chainner para esto? teclaHandler

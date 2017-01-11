@@ -125,6 +125,9 @@ void DisplayTests::displayATwoFramesLoopedGif() {
 
 
 
+
+
+
 void DisplayTests::displayALoopedGifUsingMainController() {
     MainController main;
     main.startMainLoop("buckleupTeddy.gif[0-9]");
