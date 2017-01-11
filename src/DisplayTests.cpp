@@ -135,6 +135,17 @@ void DisplayTests::displayALoopedGifUsingMainController() {
 
 
 
+void DisplayTests::navigateAGifFrameByFrame() {
+    MainController main;
+    main.startMainLoop("buckleupTeddy.gif[0-9]");
+}
+
+
+
+
+
+
+
 
 
 

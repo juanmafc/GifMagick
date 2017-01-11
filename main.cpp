@@ -55,8 +55,10 @@ int main(int argc,char **argv){
     //DisplayTests::displayATwoFramesGifOneTime();
     //DisplayTests::displayATwoFramesLoopedGif();
     //DisplayTests::displayALoopedGifUsingMainController();
+    DisplayTests::navigateAGifFrameByFrame();
 
-    InterpolationTests::getMouseCoordinatesOnClick();
+    //InterpolationTests::getMouseCoordinatesOnClick();
+    //InterpolationTests::linearInterpolationTest();
 
 
   return 0;

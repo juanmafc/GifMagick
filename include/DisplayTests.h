@@ -19,6 +19,7 @@ class DisplayTests
         static void displayATwoFramesGifOneTime();
         static void displayATwoFramesLoopedGif();
         static void displayALoopedGifUsingMainController();
+        static void navigateAGifFrameByFrame();
 
     protected:
 
