@@ -105,4 +105,11 @@ void ImageMagickTests::renderAPictureIntoAnotherPicture() {
 }
 
 
+void ImageMagickTests::saveAGif() {
+    Gif buckleUp("buckleupTeddy.gif[0-4]");
+    buckleUp.save("buckleupTeddy0_4.gif");
+}
+
+
+
 
