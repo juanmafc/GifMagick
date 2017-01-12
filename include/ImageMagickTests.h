@@ -3,6 +3,7 @@
 
 #include "Magick++.h"
 #include "Picture.h"
+#include "Screen.h"
 #include <vector>
 
 using namespace std;
@@ -16,6 +17,7 @@ class ImageMagickTests
 
         static void coalesceImagesTest();
         static void pixelHandlingTest();
+        static void renderAPictureIntoAnotherPicture();
 
     protected:
 

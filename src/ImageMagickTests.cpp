@@ -89,6 +89,20 @@ void ImageMagickTests::pixelHandlingTest() {
 
 
 
+void ImageMagickTests::renderAPictureIntoAnotherPicture() {
+    //TODO: estas tests no inicializan allegro
+    al_init();
+
+    Picture firstPicture("janna.png");
+    Picture secondPicture("rojo.bmp");
+
+    firstPicture.drawPicture(&secondPicture, 0, 0);
+
+    Screen screen(firstPicture.getColumns(), firstPicture.getRows());
+    screen.displayPicture(&firstPicture);
+
+    firstPicture.save("jannaSaved.png");
+}
 
 
 
