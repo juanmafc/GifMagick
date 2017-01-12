@@ -87,6 +87,12 @@ ALLEGRO_BITMAP* Picture::getRenderedImage() {
 }
 
 
+Magick::Image* Picture::getImage() {
+    return this->image;
+}
+
+
+
 
 
 void Picture::drawPicture(Picture* picture, int x, int y) {

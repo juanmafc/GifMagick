@@ -23,6 +23,8 @@ class Gif
 
         double getTotalDuration();
 
+        void save(string gifPath);
+
     protected:
 
     private:

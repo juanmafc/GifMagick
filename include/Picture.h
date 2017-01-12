@@ -25,6 +25,7 @@ class Picture
 
         void drawPicture(Picture* picture, int x, int y);
         ALLEGRO_BITMAP* getRenderedImage();
+        Magick::Image* getImage();
 
         float getRedAt(int row, int column);
         float getGreenAt(int row, int column);
