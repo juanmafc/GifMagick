@@ -7,9 +7,10 @@
 #include <Magick++.h>
 #include <iostream>
 
-#include "DisplayTests.h"
-#include "ImageMagickTests.h"
-#include "InterpolationTests.h"
+
+#include "Tests/DisplayTests.h"
+#include "Tests/ImageMagickTests.h"
+#include "Tests/InterpolationTests.h"
 
 #include <vector>
 
@@ -45,9 +46,11 @@ int main(int argc,char **argv){
 
 
 
-
+    al_init();
     //ImageMagickTests::coalesceImagesTest();
     //ImageMagickTests::pixelHandlingTest();
+    //ImageMagickTests::renderAPictureIntoAnotherPicture();
+    //ImageMagickTests::saveAGif();
 
 
     //DisplayTests::displayASingleImage();
@@ -55,7 +58,7 @@ int main(int argc,char **argv){
     //DisplayTests::displayATwoFramesGifOneTime();
     //DisplayTests::displayATwoFramesLoopedGif();
     //DisplayTests::displayALoopedGifUsingMainController();
-    DisplayTests::navigateAGifFrameByFrame();
+    //DisplayTests::navigateAGifFrameByFrame();
 
     //InterpolationTests::getMouseCoordinatesOnClick();
     //InterpolationTests::linearInterpolationTest();

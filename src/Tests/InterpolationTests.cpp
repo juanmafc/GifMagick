@@ -1,4 +1,4 @@
-#include "InterpolationTests.h"
+#include "Tests/InterpolationTests.h"
 
 using namespace std;
 

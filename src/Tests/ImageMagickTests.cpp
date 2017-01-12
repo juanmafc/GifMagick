@@ -1,4 +1,4 @@
-#include "ImageMagickTests.h"
+#include "Tests/ImageMagickTests.h"
 
 using namespace Magick;
 

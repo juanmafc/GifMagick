@@ -1,4 +1,4 @@
-#include "DisplayTests.h"
+#include "Tests/DisplayTests.h"
 
 DisplayTests::DisplayTests() {
     //ctor
