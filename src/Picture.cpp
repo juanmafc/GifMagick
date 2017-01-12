@@ -58,7 +58,7 @@ int Picture::getRows() {
 
 
 
-//TODO: optimizar esto
+//TODO: optimizar y refactprozar esto
 float Picture::getRedAt(int row, int column) {
     Magick::PixelPacket *pixeles= this->image->getPixels(0,0,this->image->columns(),this->image->rows());
     Magick::Color color = pixeles[this->image->columns() * row + column];
@@ -89,4 +89,37 @@ ALLEGRO_BITMAP* Picture::getRenderedImage() {
 
 
 
+void Picture::drawPicture(Picture* picture, int x, int y) {
+    al_set_target_bitmap(this->getRenderedImage());
+    al_draw_bitmap( picture->getRenderedImage(),x, y, 0);
+    al_flip_display();
+}
 
+
+
+void Picture::save(string picturePath) {
+    this->unrenderImage();
+    this->image->write(picturePath);
+}
+
+
+void Picture::unrenderImage() {
+    //TODO: IMPORTANTE PARA QUE ESTO FUNCIONE ALLEGRO DEBE SER INICIALIZADO ANTES
+    //POR ALGUNA RAZON NO FUNCIONA ESTO, rta: era por el orden, primero setear el type y despues getear los pixeles
+    this->image->modifyImage();
+    this->image->type(Magick::TrueColorType);
+    //TODO: podria refactorizarse, aparecen como 4 veces estas lineas...
+    Magick::PixelPacket *pixeles= this->image->getPixels(0,0,this->image->columns(),this->image->rows());
+
+    for (int row = 0; row < this->getRows(); row++){
+        for (int column = 0; column < this->getColumns(); column++){
+            ALLEGRO_COLOR renderedColor = al_get_pixel(this->getRenderedImage(), column, row);
+            float red = renderedColor.r;
+            float green = renderedColor.g;
+            float blue = renderedColor.b;
+
+            pixeles[this->getColumns() * row + column] = Magick::ColorRGB(red, green, blue);
+        }
+    }
+    this->image->syncPixels();
+}

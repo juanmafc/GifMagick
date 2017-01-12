@@ -23,12 +23,14 @@ class Picture
         int getRows();
 
 
+        void drawPicture(Picture* picture, int x, int y);
         ALLEGRO_BITMAP* getRenderedImage();
 
         float getRedAt(int row, int column);
         float getGreenAt(int row, int column);
         float getBlueAt(int row, int column);
 
+        void save(string picturePath);
 
     protected:
         Magick::Image* image;
@@ -36,6 +38,7 @@ class Picture
 
     private:
         void renderImage();
+        void unrenderImage();
 
 };
 
