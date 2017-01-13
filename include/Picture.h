@@ -32,6 +32,7 @@ class Picture
         float getBlueAt(int row, int column);
 
         void save(string picturePath);
+        void flushImage();
 
     protected:
         Magick::Image* image;

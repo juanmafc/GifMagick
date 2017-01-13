@@ -104,9 +104,14 @@ void Picture::drawPicture(Picture* picture, int x, int y) {
 
 
 void Picture::save(string picturePath) {
-    this->unrenderImage();
+    this->flushImage();
     this->image->write(picturePath);
 }
+
+void Picture::flushImage() {
+    this->unrenderImage();
+}
+
 
 
 void Picture::unrenderImage() {
