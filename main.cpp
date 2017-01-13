@@ -51,6 +51,7 @@ int main(int argc,char **argv){
     //ImageMagickTests::pixelHandlingTest();
     //ImageMagickTests::renderAPictureIntoAnotherPicture();
     //ImageMagickTests::saveAGif();
+    ImageMagickTests::editAndSaveGifTest();
 
 
     //DisplayTests::displayASingleImage();

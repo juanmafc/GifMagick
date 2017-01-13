@@ -20,6 +20,7 @@ class ImageMagickTests
         static void pixelHandlingTest();
         static void renderAPictureIntoAnotherPicture();
         static void saveAGif();
+        static void editAndSaveGifTest();
 
     protected:
 

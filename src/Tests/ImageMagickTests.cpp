@@ -112,4 +112,21 @@ void ImageMagickTests::saveAGif() {
 
 
 
+void ImageMagickTests::editAndSaveGifTest() {
+    Gif editedGif("buckleupTeddy.gif");
+    Picture pic("rojo.bmp");
+
+    int framesCount = editedGif.getFramesCount();
+    int step = ( editedGif.getColumns() - pic.getColumns() ) / (framesCount - 1);
+
+    for (int i = 0; i < framesCount; i++) {
+        editedGif.getFrame(i)->drawPicture(&pic, i*step, 0);
+        cout<<"Se edito el frame:"<<i<<"\n";
+    }
+
+    editedGif.save("edited.gif");
+}
+
+
+
 
