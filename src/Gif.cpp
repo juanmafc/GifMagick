@@ -86,6 +86,7 @@ double Gif::getTotalDuration() {
 void Gif::save(string gifPath) {
     list<Magick::Image> magickFrames;
     for (vector<Frame*>::iterator it = this->frames.begin(); it != this->frames.end(); ++it) {
+        (*it)->flushImage();
         magickFrames.push_back(  *((*it)->getImage())  );
     }
     Magick::writeImages(magickFrames.begin(), magickFrames.end(),gifPath);
