@@ -1,5 +1,7 @@
 #include "MainController.h"
 
+using namespace std;
+
 MainController::MainController() {
     al_init();
     al_install_keyboard();
@@ -35,6 +37,8 @@ void MainController::startMainLoop(string gifPath) {
 
     timer.start();
 
+    map<int, Point> clickedPoints;
+
     while (!quit) {
         if (loopMode) {
             if (redraw) {
@@ -67,6 +71,17 @@ void MainController::startMainLoop(string gifPath) {
                 //interpolo usando la interpolacion lineal, necesito (frame2 - frame1) + 1 puntos interpolados
                 //Necesito dibujar la imagen a interpolar en los frames indicados
                 //...Y ademas necesito poder setear la imagen a dibujar
+                //TODO: no me gusta como quedo estructurado el codigo...
+                if (!loopMode) {
+                    if (clickedPoints.find(currentFrame) == clickedPoints.end()) {
+                        clickedPoints.insert( pair<int, Point>( currentFrame, Point(event.mouse.x, event.mouse.y) ) );
+                    }
+                    else {
+                        clickedPoints.at(currentFrame).setX(event.mouse.x);
+                        clickedPoints.at(currentFrame).setY(event.mouse.y);
+                    }
+
+                }
             }
             else if (event.type == ALLEGRO_EVENT_KEY_DOWN ) {
                 //TODO: refactorizar con una clase "Keyboard" maybe...., un chainner para esto? teclaHandler
@@ -84,9 +99,49 @@ void MainController::startMainLoop(string gifPath) {
                             currentFrame++;
                         }
                         break;
+                    case ALLEGRO_KEY_F:
+                        //TODO: cambiarle el nombre
+                        this->interpolateGif(&gif, clickedPoints);
+                        break;
                 }
             }
         }
     }
     al_destroy_event_queue(event_queue);
 }
+
+
+
+void MainController::interpolateGif(Gif* gif, map<int, Point>& clickedPoints) {
+    //Picture pic("rojo.bmp");
+    Picture pic("mordekaiser.bmp");
+
+    //Frame* currentFrame = gif->getFrame(it->first);
+
+    vector<Point> originalPoints;
+    vector<Point> interpolatedPoints;
+    int firstFrame = -1;
+    int secondFrame = -1;
+    for (map<int, Point>::iterator it = clickedPoints.begin(); it != clickedPoints.end(); ++it ) {
+        originalPoints.push_back(it->second);
+        //TODO: esto es horrible....
+        if (firstFrame == -1 ) {
+            firstFrame = it->first;
+        }
+        else if ( secondFrame == -1 ) {
+            secondFrame= it->first;
+        }
+    }
+
+    LinearInterpolation interpol;
+    interpol.interpolate(originalPoints, (secondFrame - firstFrame) + 1, interpolatedPoints);
+
+    for (int i = 0; i < interpolatedPoints.size(); i++ ) {
+        Frame* currentFrame = gif->getFrame(firstFrame);
+        currentFrame->drawPicture(&pic, interpolatedPoints[i].getX(), interpolatedPoints[i].getY() );
+        firstFrame++;
+    }
+
+    gif->save("achieved.gif");
+}
+

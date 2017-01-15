@@ -6,6 +6,9 @@
 #include "Picture.h"
 #include "Screen.h"
 #include "Clock.h"
+#include "LinearInterpolation.h"
+#include <vector>
+#include <map>
 
 class MainController
 {
@@ -15,9 +18,12 @@ class MainController
 
         void startMainLoop(string gifPath);
 
+
+
     protected:
 
     private:
+        void interpolateGif(Gif* gif, map<int, Point> &clickedPoints);
 
 };
 

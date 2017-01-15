@@ -19,5 +19,13 @@ int Point::getY() {
 }
 
 
+int Point::setX(int x) {
+    this->x = x;
+}
+
+int Point::setY(int y) {
+    this->y = y;
+}
+
 
 

@@ -129,4 +129,3 @@ void ImageMagickTests::editAndSaveGifTest() {
 
 
 
-
