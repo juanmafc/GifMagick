@@ -49,8 +49,14 @@ void MainController::startMainLoop(string gifPath) {
             }
         }
         else {
-            screen.displayPicture( gif.getFrame(currentFrame));
+            if (redraw) {
+                screen.displayPicture( gif.getFrame(currentFrame));
+                redraw = false;
+            }
+
         }
+
+
 
         while (!al_is_event_queue_empty(event_queue)) {
             ALLEGRO_EVENT event;
@@ -92,11 +98,13 @@ void MainController::startMainLoop(string gifPath) {
                     case ALLEGRO_KEY_LEFT:
                         if (currentFrame > 0) {
                             currentFrame--;
+                            redraw = true;
                         }
                         break;
                     case ALLEGRO_KEY_RIGHT:
                         if (currentFrame < gif.getFramesCount() - 1) {
                             currentFrame++;
+                            redraw = true;
                         }
                         break;
                     case ALLEGRO_KEY_F:
@@ -116,8 +124,9 @@ void MainController::interpolateGif(Gif* gif, map<int, Point>& clickedPoints) {
     //Picture pic("rojo.bmp");
     Picture pic("mordekaiser.bmp");
 
-    //Frame* currentFrame = gif->getFrame(it->first);
 
+
+    //TODO: esto se puede ir
     vector<Point> originalPoints;
     vector<Point> interpolatedPoints;
     int firstFrame = -1;
