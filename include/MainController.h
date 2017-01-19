@@ -6,11 +6,6 @@
 #include "Picture.h"
 #include "Screen.h"
 #include "Clock.h"
-/*
-#include "LinearInterpolation.h"
-#include <vector>
-#include <map>
-*/
 
 #include "LoopedMode.h"
 #include "InterpolationMode.h"
