@@ -256,7 +256,7 @@
 
 1482772657 source:c:\users\user\documents\gifmaker\include\allegrotutorials.cpp
 
-1484260371 source:c:\users\user\documents\gifmaker\main.cpp
+1484408476 source:c:\users\user\documents\gifmaker\main.cpp
 	<stdio.h>
 	<allegro5/allegro.h>
 	"AllegroTutorials.h"
@@ -819,7 +819,7 @@
 	"MainController.h"
 	<stdio.h>
 
-1484258414 c:\users\user\documents\gifmaker\include\picture.h
+1484339377 c:\users\user\documents\gifmaker\include\picture.h
 	<iostream>
 	<string>
 	<Magick++.h>
@@ -849,12 +849,17 @@
 1483975957 c:\users\user\documents\gifmaker\include\frame.h
 	<Picture.h>
 
-1484141859 c:\users\user\documents\gifmaker\include\maincontroller.h
+1484805410 c:\users\user\documents\gifmaker\include\maincontroller.h
 	"allegro5/allegro.h"
 	"Gif.h"
 	"Picture.h"
 	"Screen.h"
 	"Clock.h"
+	"LinearInterpolation.h"
+	<vector>
+	<map>
+	"LoopedMode.h"
+	"InterpolationMode.h"
 
 1484258007 c:\users\user\documents\gifmaker\include\imagemagicktests.h
 	"Magick++.h"
@@ -878,7 +883,7 @@
 	<vector>
 	"Point.h"
 
-1484084463 c:\users\user\documents\gifmaker\include\point.h
+1484407356 c:\users\user\documents\gifmaker\include\point.h
 
 1484054174 source:c:\users\user\documents\gifmaker\src\clock.cpp
 	"Clock.h"
@@ -892,7 +897,7 @@
 1483975507 source:c:\users\user\documents\gifmaker\src\frame.cpp
 	"Frame.h"
 
-1484258698 source:c:\users\user\documents\gifmaker\src\gif.cpp
+1484339654 source:c:\users\user\documents\gifmaker\src\gif.cpp
 	"Gif.h"
 
 1484258823 source:c:\users\user\documents\gifmaker\src\imagemagicktests.cpp
@@ -904,13 +909,13 @@
 1484137456 source:c:\users\user\documents\gifmaker\src\interpolationtests.cpp
 	"InterpolationTests.h"
 
-1484163203 source:c:\users\user\documents\gifmaker\src\maincontroller.cpp
+1484806407 source:c:\users\user\documents\gifmaker\src\maincontroller.cpp
 	"MainController.h"
 
-1484258721 source:c:\users\user\documents\gifmaker\src\picture.cpp
+1484339561 source:c:\users\user\documents\gifmaker\src\picture.cpp
 	"Picture.h"
 
-1484084480 source:c:\users\user\documents\gifmaker\src\point.cpp
+1484407379 source:c:\users\user\documents\gifmaker\src\point.cpp
 	"Point.h"
 
 1484228006 source:c:\users\user\documents\gifmaker\src\screen.cpp
@@ -927,7 +932,7 @@
 	"MainController.h"
 	<stdio.h>
 
-1484258007 c:\users\user\documents\gifmaker\include\tests\imagemagicktests.h
+1484338189 c:\users\user\documents\gifmaker\include\tests\imagemagicktests.h
 	"Magick++.h"
 	"Picture.h"
 	"Screen.h"
@@ -940,12 +945,34 @@
 	<iostream>
 	"LinearInterpolation.h"
 
-1484260403 source:c:\users\user\documents\gifmaker\src\tests\displaytests.cpp
+1484342772 source:c:\users\user\documents\gifmaker\src\tests\displaytests.cpp
 	"Tests/DisplayTests.h"
 
-1484260414 source:c:\users\user\documents\gifmaker\src\tests\imagemagicktests.cpp
+1484358515 source:c:\users\user\documents\gifmaker\src\tests\imagemagicktests.cpp
 	"Tests/ImageMagickTests.h"
 
 1484260422 source:c:\users\user\documents\gifmaker\src\tests\interpolationtests.cpp
 	"Tests/InterpolationTests.h"
+
+1484806100 source:c:\users\user\documents\gifmaker\src\renderingmode.cpp
+	"RenderingMode.h"
+
+1484806074 c:\users\user\documents\gifmaker\include\renderingmode.h
+	"allegro5/allegro.h"
+	"Screen.h"
+	"Gif.h"
+
+1484806306 source:c:\users\user\documents\gifmaker\src\interpolationmode.cpp
+	"InterpolationMode.h"
+
+1484803562 c:\users\user\documents\gifmaker\include\interpolationmode.h
+	<RenderingMode.h>
+	<map>
+	"LinearInterpolation.h"
+
+1484806156 source:c:\users\user\documents\gifmaker\src\loopedmode.cpp
+	"LoopedMode.h"
+
+1484802092 c:\users\user\documents\gifmaker\include\loopedmode.h
+	<RenderingMode.h>
 

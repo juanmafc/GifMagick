@@ -81,32 +81,40 @@
 		<Unit filename="disposeREACHED.gif" />
 		<Unit filename="include/AllegroTutorials.cpp" />
 		<Unit filename="include/Clock.h" />
-		<Unit filename="include/DisplayTests.h" />
 		<Unit filename="include/EventSource.h" />
 		<Unit filename="include/Frame.h" />
 		<Unit filename="include/Gif.h" />
 		<Unit filename="include/ImageMagickTests.h" />
 		<Unit filename="include/InterpolationMethod.h" />
+		<Unit filename="include/InterpolationMode.h" />
 		<Unit filename="include/InterpolationTests.h" />
 		<Unit filename="include/LinearInterpolation.h" />
+		<Unit filename="include/LoopedMode.h" />
 		<Unit filename="include/MainController.h" />
 		<Unit filename="include/Picture.h" />
 		<Unit filename="include/Point.h" />
+		<Unit filename="include/RenderingMode.h" />
 		<Unit filename="include/Screen.h" />
+		<Unit filename="include/Tests/DisplayTests.h" />
+		<Unit filename="include/Tests/ImageMagickTests.h" />
+		<Unit filename="include/Tests/InterpolationTests.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Clock.cpp" />
-		<Unit filename="src/DisplayTests.cpp" />
 		<Unit filename="src/EventSource.cpp" />
 		<Unit filename="src/Frame.cpp" />
 		<Unit filename="src/Gif.cpp" />
-		<Unit filename="src/ImageMagickTests.cpp" />
 		<Unit filename="src/InterpolationMethod.cpp" />
-		<Unit filename="src/InterpolationTests.cpp" />
+		<Unit filename="src/InterpolationMode.cpp" />
 		<Unit filename="src/LinearInterpolation.cpp" />
+		<Unit filename="src/LoopedMode.cpp" />
 		<Unit filename="src/MainController.cpp" />
 		<Unit filename="src/Picture.cpp" />
 		<Unit filename="src/Point.cpp" />
+		<Unit filename="src/RenderingMode.cpp" />
 		<Unit filename="src/Screen.cpp" />
+		<Unit filename="src/Tests/DisplayTests.cpp" />
+		<Unit filename="src/Tests/ImageMagickTests.cpp" />
+		<Unit filename="src/Tests/InterpolationTests.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
