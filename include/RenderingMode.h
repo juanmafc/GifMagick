@@ -16,8 +16,13 @@ class RenderingMode
 
         virtual void handleEvent(ALLEGRO_EVENT* event);
 
+        bool isClosed();
+
+        bool needsRendering();
+
+
     protected:
-        bool quit;
+        bool closed;
         bool redraw;
 
         Screen* screen;

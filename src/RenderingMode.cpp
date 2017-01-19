@@ -1,7 +1,7 @@
 #include "RenderingMode.h"
 
 RenderingMode::RenderingMode(Screen* screen, Gif* gif) {
-    this->quit = false;
+    this->closed = false;
     this->redraw = true;
 
     this->screen = screen;
@@ -16,7 +16,15 @@ RenderingMode::~RenderingMode()
 
 void RenderingMode::handleEvent(ALLEGRO_EVENT* event) {
     if (event->type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
-        this->quit = true;
+        this->closed = true;
     }
+}
+
+bool RenderingMode::isClosed() {
+    return this->closed;
+}
+
+bool RenderingMode::needsRendering() {
+    return this->redraw;
 }
 
