@@ -5,8 +5,7 @@
 #include <allegro5/allegro.h>
 #include <iostream>
 
-//#include "InterpolationMethod.h"
-#include "LinearInterpolation.h"
+#include "InterpolationMethods/LinearInterpolation.h"
 
 
 using namespace std;

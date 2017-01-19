@@ -1,4 +1,4 @@
-#include "LinearInterpolation.h"
+#include "InterpolationMethods/LinearInterpolation.h"
 
 using namespace std;
 

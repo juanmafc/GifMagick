@@ -1,9 +1,9 @@
 #ifndef INTERPOLATIONMODE_H
 #define INTERPOLATIONMODE_H
 
-#include <RenderingMode.h>
+#include <RenderingModes/RenderingMode.h>
 #include <map>
-#include "LinearInterpolation.h"
+#include "InterpolationMethods/LinearInterpolation.h"
 
 
 using namespace std;

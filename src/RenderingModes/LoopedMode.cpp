@@ -1,4 +1,4 @@
-#include "LoopedMode.h"
+#include "RenderingModes/LoopedMode.h"
 
 LoopedMode::LoopedMode(Screen* screen, Gif* gif): RenderingMode(screen, gif) {
     //ctor

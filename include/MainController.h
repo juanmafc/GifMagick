@@ -7,8 +7,8 @@
 #include "Screen.h"
 #include "Clock.h"
 
-#include "LoopedMode.h"
-#include "InterpolationMode.h"
+#include "RenderingModes/LoopedMode.h"
+#include "RenderingModes/InterpolationMode.h"
 
 class MainController
 {

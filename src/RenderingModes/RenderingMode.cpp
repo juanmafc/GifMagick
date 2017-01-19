@@ -1,4 +1,4 @@
-#include "RenderingMode.h"
+#include "RenderingModes/RenderingMode.h"
 
 RenderingMode::RenderingMode(Screen* screen, Gif* gif) {
     this->closed = false;

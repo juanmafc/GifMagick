@@ -1,7 +1,7 @@
 #ifndef LOOPEDMODE_H
 #define LOOPEDMODE_H
 
-#include <RenderingMode.h>
+#include <RenderingModes/RenderingMode.h>
 
 
 class LoopedMode : public RenderingMode

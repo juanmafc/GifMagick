@@ -849,17 +849,14 @@
 1483975957 c:\users\user\documents\gifmaker\include\frame.h
 	<Picture.h>
 
-1484805410 c:\users\user\documents\gifmaker\include\maincontroller.h
+1484838273 c:\users\user\documents\gifmaker\include\maincontroller.h
 	"allegro5/allegro.h"
 	"Gif.h"
 	"Picture.h"
 	"Screen.h"
 	"Clock.h"
-	"LinearInterpolation.h"
-	<vector>
-	<map>
-	"LoopedMode.h"
-	"InterpolationMode.h"
+	"RenderingModes/LoopedMode.h"
+	"RenderingModes/InterpolationMode.h"
 
 1484258007 c:\users\user\documents\gifmaker\include\imagemagicktests.h
 	"Magick++.h"
@@ -909,7 +906,7 @@
 1484137456 source:c:\users\user\documents\gifmaker\src\interpolationtests.cpp
 	"InterpolationTests.h"
 
-1484806407 source:c:\users\user\documents\gifmaker\src\maincontroller.cpp
+1484837191 source:c:\users\user\documents\gifmaker\src\maincontroller.cpp
 	"MainController.h"
 
 1484339561 source:c:\users\user\documents\gifmaker\src\picture.cpp
@@ -939,11 +936,11 @@
 	"Gif.h"
 	<vector>
 
-1484079591 c:\users\user\documents\gifmaker\include\tests\interpolationtests.h
+1484838311 c:\users\user\documents\gifmaker\include\tests\interpolationtests.h
 	<stdio.h>
 	<allegro5/allegro.h>
 	<iostream>
-	"LinearInterpolation.h"
+	"InterpolationMethods/LinearInterpolation.h"
 
 1484342772 source:c:\users\user\documents\gifmaker\src\tests\displaytests.cpp
 	"Tests/DisplayTests.h"
@@ -975,4 +972,41 @@
 
 1484802092 c:\users\user\documents\gifmaker\include\loopedmode.h
 	<RenderingMode.h>
+
+1484838282 c:\users\user\documents\gifmaker\include\renderingmodes\loopedmode.h
+	<RenderingModes/RenderingMode.h>
+
+1484838299 c:\users\user\documents\gifmaker\include\renderingmodes\interpolationmode.h
+	<RenderingModes/RenderingMode.h>
+	<map>
+	"InterpolationMethods/LinearInterpolation.h"
+
+1484806074 c:\users\user\documents\gifmaker\include\renderingmodes\renderingmode.h
+	"allegro5/allegro.h"
+	"Screen.h"
+	"Gif.h"
+
+1484087262 c:\users\user\documents\gifmaker\include\interpolationmethods\linearinterpolation.h
+	"InterpolationMethod.h"
+	<math.h>
+	<iostream>
+
+1484084756 c:\users\user\documents\gifmaker\include\interpolationmethods\interpolationmethod.h
+	<vector>
+	"Point.h"
+
+1484838342 source:c:\users\user\documents\gifmaker\src\interpolationmethods\interpolationmethod.cpp
+	"InterpolationMethods/InterpolationMethod.h"
+
+1484838409 source:c:\users\user\documents\gifmaker\src\interpolationmethods\linearinterpolation.cpp
+	"InterpolationMethods/LinearInterpolation.h"
+
+1484838439 source:c:\users\user\documents\gifmaker\src\renderingmodes\interpolationmode.cpp
+	"RenderingModes/InterpolationMode.h"
+
+1484838447 source:c:\users\user\documents\gifmaker\src\renderingmodes\loopedmode.cpp
+	"RenderingModes/LoopedMode.h"
+
+1484838458 source:c:\users\user\documents\gifmaker\src\renderingmodes\renderingmode.cpp
+	"RenderingModes/RenderingMode.h"
 

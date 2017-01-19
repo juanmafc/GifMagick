@@ -39,8 +39,8 @@ void MainController::startMainLoop(string gifPath) {
 
     map<int, Point> clickedPoints;
 
-    LoopedMode loop(&screen, &gif);
-    //InterpolationMode loop(&screen, &gif);
+    //LoopedMode loop(&screen, &gif);
+    InterpolationMode loop(&screen, &gif);
 
     while ( !loop.isClosed() ) {
         //TODO: esto de redraw podria moverse a cada estado, el tema es que no se como funcionaria con varios eventos tho....

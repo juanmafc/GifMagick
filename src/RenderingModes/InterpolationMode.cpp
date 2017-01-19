@@ -1,4 +1,4 @@
-#include "InterpolationMode.h"
+#include "RenderingModes/InterpolationMode.h"
 
 using namespace std;
 
