@@ -21,7 +21,6 @@ void ImageMagickTests::coalesceImagesTest() {
     //readImages(&imagenes, "disposeGOAL.gif");
     //readImages(&imagenes, "francella.gif");
 
-    size_t columnas = imagenes[0].columns();
 
     //coalesceImages(&imagenesCoalesceadas, imagenes.begin(), imagenes.end() );
     coalesceImages(&imagenes, imagenes.begin(), imagenes.end() );
