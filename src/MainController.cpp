@@ -28,13 +28,6 @@ void MainController::startMainLoop(string gifPath) {
     al_register_event_source(event_queue, al_get_mouse_event_source());
 
 
-    bool quit = false;
-    bool redraw = true;
-
-    //TODO: MAYBE se podria usar un State
-    bool loopMode = true;
-    int currentFrame = 0;
-
     timer.start();
 
     map<int, Point> clickedPoints;
