@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <allegro5/allegro.h>
 #include "AllegroTutorials.h"
-#include "Save_gif.h"
 #include "algif5src/algif.h"
 
 #include <Magick++.h>
