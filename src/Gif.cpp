@@ -3,6 +3,7 @@
 using namespace std;
 
 Gif::Gif(string gifPath) {
+    this->totalDuration = 0;
     //TODO: tal vez sea mas rapido levantarlo con pingImages
     //Tambien puede ser que sea mas rapido levantar una por una, no se
     /*  Problema: no se si esto va a tomar mas tiempo, lo de crear dos veces la misma imagen

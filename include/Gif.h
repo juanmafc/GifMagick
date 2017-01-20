@@ -29,7 +29,7 @@ class Gif
 
     private:
         vector<Frame*> frames;
-        double totalDuration = 0;
+        double totalDuration;
 };
 
 #endif // GIF_H
