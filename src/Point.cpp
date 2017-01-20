@@ -19,11 +19,11 @@ int Point::getY() {
 }
 
 
-int Point::setX(int x) {
+void Point::setX(int x) {
     this->x = x;
 }
 
-int Point::setY(int y) {
+void Point::setY(int y) {
     this->y = y;
 }
 
