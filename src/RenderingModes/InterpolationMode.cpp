@@ -22,13 +22,7 @@ void InterpolationMode::handleEvent(ALLEGRO_EVENT* event) {
     RenderingMode::handleEvent(event);
 
     if(event->type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
-        if (clickedPoints.find(this->currentFrame) == clickedPoints.end()) {
-            clickedPoints.insert( pair<int, Point>( this->currentFrame, Point(event->mouse.x, event->mouse.y) ) );
-        }
-        else {
-            clickedPoints.at(this->currentFrame).setX(event->mouse.x);
-            clickedPoints.at(this->currentFrame).setY(event->mouse.y);
-        }
+        this->registerMouseClick(event->mouse.x, event->mouse.y);
     }
     else if (event->type == ALLEGRO_EVENT_KEY_DOWN ) {
         //TODO: refactorizar con una clase "Keyboard" maybe...., un chainner para esto? teclaHandler
@@ -46,7 +40,6 @@ void InterpolationMode::handleEvent(ALLEGRO_EVENT* event) {
                 }
                 break;
             case ALLEGRO_KEY_F:
-                //TODO: cambiarle el nombre
                 this->interpolateGif();
                 break;
         }
@@ -54,35 +47,38 @@ void InterpolationMode::handleEvent(ALLEGRO_EVENT* event) {
 }
 
 void InterpolationMode::interpolateGif() {
-    //Picture pic("rojo.bmp");
-    Picture pic("mordekaiser.bmp");
+    Picture pic("rojo.bmp");
+    //Picture pic("mordekaiser.bmp");
 
 
-    //TODO: esto se puede ir
-    vector<Point> originalPoints;
-    vector<Point> interpolatedPoints;
-    int firstFrame = -1;
-    int secondFrame = -1;
-    for (map<int, Point>::iterator it = clickedPoints.begin(); it != clickedPoints.end(); ++it ) {
-        originalPoints.push_back(it->second);
-        //TODO: esto es horrible....
-        if (firstFrame == -1 ) {
-            firstFrame = it->first;
-        }
-        else if ( secondFrame == -1 ) {
-            secondFrame= it->first;
-        }
-    }
-
+    map<int, Point> interpolatedPoints;
     LinearInterpolation interpol;
-    interpol.interpolate(originalPoints, (secondFrame - firstFrame) + 1, interpolatedPoints);
+    interpol.interpolate(this->clickedPoints, interpolatedPoints);
 
-    for (int i = 0; i < interpolatedPoints.size(); i++ ) {
-        Frame* currentFrame = gif->getFrame(firstFrame);
-        currentFrame->drawPicture(&pic, interpolatedPoints[i].getX(), interpolatedPoints[i].getY() );
-        firstFrame++;
+
+    for (map<int, Point>::iterator it = interpolatedPoints.begin(); it != interpolatedPoints.end() ; ++it ) {
+        Frame* currentFrame = gif->getFrame(it->first);
+        currentFrame->drawPicture(&pic, it->second.getX(), it->second.getY() );
     }
 
     gif->save("achieved.gif");
+}
+
+
+
+
+
+
+
+void InterpolationMode::registerMouseClick(int x, int y) {
+    if (this->clickedPoints.find(this->currentFrame) == this->clickedPoints.end()) {
+        this->clickedPoints.insert( pair<int, Point>( this->currentFrame, Point(x, y) ) );
+    }
+    else {
+        this->clickedPoints.at(this->currentFrame).setX(x);
+        this->clickedPoints.at(this->currentFrame).setY(y);
+    }
+
+    cout<<"Mouse X:"<<x<<"   Y:"<<y<<"   Frame:"<<currentFrame<<"\n";
 }
 

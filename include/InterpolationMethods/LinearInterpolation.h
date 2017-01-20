@@ -3,6 +3,7 @@
 
 #include "InterpolationMethod.h"
 #include <math.h>
+#include <iterator>
 
 #include <iostream>
 
@@ -12,7 +13,8 @@ class LinearInterpolation : public InterpolationMethod
         LinearInterpolation();
         virtual ~LinearInterpolation();
 
-        void interpolate(vector<Point> &originalPoints, int interpolatedPointsCount, vector<Point> &interpolatedPoints);
+
+        virtual void interpolate(map<int, Point> &originalPoints, map<int, Point> &interpolatedPoints);
 
     protected:
 

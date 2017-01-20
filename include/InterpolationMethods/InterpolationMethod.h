@@ -1,7 +1,7 @@
 #ifndef INTERPOLATIONMETHOD_H
 #define INTERPOLATIONMETHOD_H
 
-#include <vector>
+#include <map>
 #include "Point.h"
 
 using namespace std;
@@ -9,7 +9,10 @@ using namespace std;
 class InterpolationMethod
 {
     public:
-        virtual void interpolate(vector<Point> &originalPoints, int interpolatedPointsCount, vector<Point> &interpolatedPoints) = 0;
+
+        virtual ~InterpolationMethod();
+
+        virtual void interpolate(map<int, Point> &originalPoints, map<int, Point> &interpolatedPoints) = 0;
 
     protected:
 

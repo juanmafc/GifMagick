@@ -24,6 +24,7 @@ class InterpolationMode : public RenderingMode
         void interpolateGif();
 
     private:
+        void registerMouseClick(int x, int y);
 
 };
 

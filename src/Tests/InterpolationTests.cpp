@@ -48,17 +48,17 @@ void InterpolationTests::getMouseCoordinatesOnClick() {
 
 void InterpolationTests::linearInterpolationTest() {
     InterpolationMethod* interpol = new LinearInterpolation();
-    vector<Point> originalPoints, interpolatedPoints;
+    map<int, Point> originalPoints, interpolatedPoints;
 
-    originalPoints.push_back(Point(1,10));
-    originalPoints.push_back(Point(10,1));
+    originalPoints.insert(pair<int, Point>(1, Point(1,10) ) );
+    originalPoints.insert(pair<int, Point>(10, Point(10,1) ) );
 
 
-    int interpolatedPointsCount = 10;
-    interpol->interpolate(originalPoints, interpolatedPointsCount, interpolatedPoints);
+    interpol->interpolate(originalPoints, interpolatedPoints);
 
-    for (int i = 0; i < interpolatedPointsCount; i++) {
-        cout<<"Xinter:"<<interpolatedPoints[i].getX()<<"  Yinter:"<<interpolatedPoints[i].getY()<<"\n";
+
+    for (map<int, Point>::iterator it = interpolatedPoints.begin(); it != interpolatedPoints.end() ; ++it ) {
+        cout<<"Xinter:"<<it->second.getX()<<"  Yinter:"<<it->second.getY()<<"\n";
     }
     cout<<"interpolatedPointsSize: "<<interpolatedPoints.size()<"\n";
     delete interpol;
