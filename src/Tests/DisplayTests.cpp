@@ -86,13 +86,10 @@ void DisplayTests::displayATwoFramesLoopedGif() {
 
 
     Clock timer(1 / 60.0);
-    //ALLEGRO_TIMER *timer = al_create_timer();
 
 
     ALLEGRO_EVENT_QUEUE *event_queue = al_create_event_queue();
-    //TODO: refactorizar esto, no me gusta tener que tener el metodo getDisplay:
-    //al_register_event_source(event_queue, al_get_display_event_source( screen.getDisplay() ));
-    //al_register_event_source(event_queue, al_get_timer_event_source(timer));
+
     screen.registerIn( event_queue );
     timer.registerIn( event_queue );
 
