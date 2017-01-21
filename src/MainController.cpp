@@ -33,18 +33,23 @@ void MainController::startMainLoop(string gifPath) {
     map<int, Point> clickedPoints;
 
     //LoopedMode loop(&screen, &gif);
-    InterpolationMode loop(&screen, &gif);
+    //InterpolationMode loop(&screen, &gif);
 
-    while ( !loop.isClosed() ) {
+    RenderingModesManager modesManager(&screen, &gif);
+    RenderingMode* currentMode  = modesManager.getCurrentMode();
+
+
+    while ( !currentMode->isClosed() ) {
         //TODO: esto de redraw podria moverse a cada estado, el tema es que no se como funcionaria con varios eventos tho....
         //Esto es mejor, porque, por ejemplo, el InterpolatedMode no se dibujaria hasta que se apriete RIGHT por primera vez
-        if ( loop.needsRendering() ) {
-            loop.render();
+        if ( currentMode->needsRendering() ) {
+            currentMode->render();
         }
         while (!al_is_event_queue_empty(event_queue)) {
             ALLEGRO_EVENT event;
             al_wait_for_event(event_queue, &event);
-            loop.handleEvent(&event);
+            currentMode->handleEvent(&event);
+            currentMode = modesManager.getCurrentMode(&event);
         }
     }
     al_destroy_event_queue(event_queue);
