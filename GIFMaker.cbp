@@ -60,7 +60,6 @@
 			<Add library="C:/ImageMagick-6.8.5/lib/libMagickWand-6.Q16.dll.a" />
 		</Linker>
 		<Unit filename="AllegroTutorials.h" />
-		<Unit filename="Save_gif.h" />
 		<Unit filename="algif5src/algif.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -84,16 +83,14 @@
 		<Unit filename="include/EventSource.h" />
 		<Unit filename="include/Frame.h" />
 		<Unit filename="include/Gif.h" />
-		<Unit filename="include/ImageMagickTests.h" />
-		<Unit filename="include/InterpolationMethod.h" />
-		<Unit filename="include/InterpolationMode.h" />
-		<Unit filename="include/InterpolationTests.h" />
-		<Unit filename="include/LinearInterpolation.h" />
-		<Unit filename="include/LoopedMode.h" />
+		<Unit filename="include/InterpolationMethods/InterpolationMethod.h" />
+		<Unit filename="include/InterpolationMethods/LinearInterpolation.h" />
 		<Unit filename="include/MainController.h" />
 		<Unit filename="include/Picture.h" />
 		<Unit filename="include/Point.h" />
-		<Unit filename="include/RenderingMode.h" />
+		<Unit filename="include/RenderingModes/InterpolationMode.h" />
+		<Unit filename="include/RenderingModes/LoopedMode.h" />
+		<Unit filename="include/RenderingModes/RenderingMode.h" />
 		<Unit filename="include/Screen.h" />
 		<Unit filename="include/Tests/DisplayTests.h" />
 		<Unit filename="include/Tests/ImageMagickTests.h" />
@@ -103,14 +100,14 @@
 		<Unit filename="src/EventSource.cpp" />
 		<Unit filename="src/Frame.cpp" />
 		<Unit filename="src/Gif.cpp" />
-		<Unit filename="src/InterpolationMethod.cpp" />
-		<Unit filename="src/InterpolationMode.cpp" />
-		<Unit filename="src/LinearInterpolation.cpp" />
-		<Unit filename="src/LoopedMode.cpp" />
+		<Unit filename="src/InterpolationMethods/InterpolationMethod.cpp" />
+		<Unit filename="src/InterpolationMethods/LinearInterpolation.cpp" />
 		<Unit filename="src/MainController.cpp" />
 		<Unit filename="src/Picture.cpp" />
 		<Unit filename="src/Point.cpp" />
-		<Unit filename="src/RenderingMode.cpp" />
+		<Unit filename="src/RenderingModes/InterpolationMode.cpp" />
+		<Unit filename="src/RenderingModes/LoopedMode.cpp" />
+		<Unit filename="src/RenderingModes/RenderingMode.cpp" />
 		<Unit filename="src/Screen.cpp" />
 		<Unit filename="src/Tests/DisplayTests.cpp" />
 		<Unit filename="src/Tests/ImageMagickTests.cpp" />
