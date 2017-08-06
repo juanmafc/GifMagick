@@ -43,14 +43,14 @@ Screen::~Screen(){
 
 
 
-void Screen::displayPicture(Picture* picture){
-    this->copyPixelsToScreenBuffer(picture);
+void Screen::displayPicture(Picture* picture, int x, int y){
+    this->copyPixelsToScreenBuffer(picture, x, y);
     this->updateScreen();
     //al_rest(2);
 }
 
 
-void Screen::copyPixelsToScreenBuffer(Picture* picture) {
+void Screen::copyPixelsToScreenBuffer(Picture* picture, int x, int y) {
     /*
     ALLEGRO_BITMAP* displayedBitmap = al_get_backbuffer(this->display);
 
@@ -66,7 +66,7 @@ void Screen::copyPixelsToScreenBuffer(Picture* picture) {
     */
     ALLEGRO_BITMAP* displayedBitmap = picture->getRenderedImage();
     al_set_target_backbuffer(this->display);
-    al_draw_bitmap(displayedBitmap, 0, 0, 0);
+    al_draw_bitmap(displayedBitmap, x, y, 0);
 }
 
 void Screen::updateScreen() {

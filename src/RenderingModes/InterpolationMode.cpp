@@ -4,6 +4,10 @@ using namespace std;
 
 InterpolationMode::InterpolationMode(Screen* screen, Gif* gif): RenderingMode(screen, gif) {
     this->currentFrame = 0;
+    this->currentMouseX = 0;
+    this->currentMouseY = 0;
+
+    this->pic = new Picture("rojo.bmp");
 }
 
 InterpolationMode::~InterpolationMode()
@@ -14,6 +18,7 @@ InterpolationMode::~InterpolationMode()
 
 void InterpolationMode::render() {
     this->screen->displayPicture( this->gif->getFrame( this->currentFrame ) );
+    this->screen->displayPicture( this->pic, this->currentMouseX, this->currentMouseY );
 }
 
 
@@ -21,7 +26,11 @@ void InterpolationMode::render() {
 void InterpolationMode::handleEvent(ALLEGRO_EVENT* event) {
     RenderingMode::handleEvent(event);
 
-    if(event->type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
+    if(event->type == ALLEGRO_EVENT_MOUSE_AXES) {
+        this->currentMouseX = event->mouse.x;
+        this->currentMouseY = event->mouse.y;
+    }
+    else if(event->type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
         this->registerMouseClick(event->mouse.x, event->mouse.y);
     }
     else if (event->type == ALLEGRO_EVENT_KEY_DOWN ) {

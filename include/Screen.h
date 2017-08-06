@@ -14,7 +14,7 @@ class Screen : public EventSource
     public:
         Screen(int columns, int rows);
         virtual ~Screen();
-        void displayPicture(Picture* picture);
+        void displayPicture(Picture* picture, int x = 0, int y = 0);
 
         void registerIn(ALLEGRO_EVENT_QUEUE* event_queue);
 
@@ -26,7 +26,7 @@ class Screen : public EventSource
         int rows;
         int columns;
 
-        void copyPixelsToScreenBuffer(Picture* picture);
+        void copyPixelsToScreenBuffer(Picture* picture, int x, int y);
         void updateScreen();
 };
 

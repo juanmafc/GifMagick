@@ -26,6 +26,10 @@ class InterpolationMode : public RenderingMode
     private:
         void registerMouseClick(int x, int y);
 
+        int currentMouseX;
+        int currentMouseY;
+        Picture* pic;
+
 };
 
 #endif // INTERPOLATIONMODE_H
