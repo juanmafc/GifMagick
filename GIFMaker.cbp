@@ -16,6 +16,7 @@
 					<Add option="-g" />
 					<Add option="-Wcpp" />
 					<Add directory="include" />
+					<Add directory="include/RenderingModes" />
 				</Compiler>
 				<Linker>
 					<Add library="C:/Allegro/lib/liballegro-5.0.10-monolith-mt-debug.a" />
@@ -29,6 +30,7 @@
 				<Compiler>
 					<Add option="-O2" />
 					<Add directory="include" />
+					<Add directory="include/RenderingModes" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -91,6 +93,7 @@
 		<Unit filename="include/RenderingModes/InterpolationMode.h" />
 		<Unit filename="include/RenderingModes/LoopedMode.h" />
 		<Unit filename="include/RenderingModes/RenderingMode.h" />
+		<Unit filename="include/RenderingModes/RenderingModesManager.h" />
 		<Unit filename="include/Screen.h" />
 		<Unit filename="include/Tests/DisplayTests.h" />
 		<Unit filename="include/Tests/ImageMagickTests.h" />
@@ -108,6 +111,7 @@
 		<Unit filename="src/RenderingModes/InterpolationMode.cpp" />
 		<Unit filename="src/RenderingModes/LoopedMode.cpp" />
 		<Unit filename="src/RenderingModes/RenderingMode.cpp" />
+		<Unit filename="src/RenderingModes/RenderingModesManager.cpp" />
 		<Unit filename="src/Screen.cpp" />
 		<Unit filename="src/Tests/DisplayTests.cpp" />
 		<Unit filename="src/Tests/ImageMagickTests.cpp" />

@@ -826,7 +826,7 @@
 	"allegro5/allegro_image.h"
 	"allegro5/allegro_primitives.h"
 
-1483986498 c:\users\user\documents\gifmaker\include\screen.h
+1484964402 c:\users\user\documents\gifmaker\include\screen.h
 	"Picture.h"
 	"EventSource.h"
 	<allegro5/allegro.h>
@@ -913,7 +913,7 @@
 1484934060 source:c:\users\user\documents\gifmaker\src\point.cpp
 	"Point.h"
 
-1484228006 source:c:\users\user\documents\gifmaker\src\screen.cpp
+1484964443 source:c:\users\user\documents\gifmaker\src\screen.cpp
 	"Screen.h"
 
 1484091754 source:c:\users\user\documents\gifmaker\src\linearinterpolation.cpp
@@ -974,7 +974,7 @@
 1484936138 c:\users\user\documents\gifmaker\include\renderingmodes\loopedmode.h
 	<RenderingModes/RenderingMode.h>
 
-1484936137 c:\users\user\documents\gifmaker\include\renderingmodes\interpolationmode.h
+1484964123 c:\users\user\documents\gifmaker\include\renderingmodes\interpolationmode.h
 	<RenderingModes/RenderingMode.h>
 	<map>
 	"InterpolationMethods/LinearInterpolation.h"
@@ -1000,7 +1000,7 @@
 1484934730 source:c:\users\user\documents\gifmaker\src\interpolationmethods\linearinterpolation.cpp
 	"InterpolationMethods/LinearInterpolation.h"
 
-1484936141 source:c:\users\user\documents\gifmaker\src\renderingmodes\interpolationmode.cpp
+1484964185 source:c:\users\user\documents\gifmaker\src\renderingmodes\interpolationmode.cpp
 	"RenderingModes/InterpolationMode.h"
 
 1484936142 source:c:\users\user\documents\gifmaker\src\renderingmodes\loopedmode.cpp
